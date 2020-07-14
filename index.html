@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header__icon">
+                <img src="./img/virus.svg" id="virus" alt="COVID-19">
+            </div>
+            <div class="header__text">COVID-19</div>
+        </div>
+        <div class="cases">
+            <div class="cases__total">
+                <div class="cases__total-no"></div>
+                <div class="cases__total-description">
+                    <div class="cases__total-description-text">Total Cases</div>
+                    <div class="cases__total-description-icon">
+                        <svg class="arrow-up">
+                            <use xlink:href="img/sprite.svg#icon-arrow-up2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__total-delta">
+                </div>
+            </div>
+            <div class="cases__active">
+                <div class="cases__active-no"></div>
+                <div class="cases__active-description">
+                    <div class="cases__active-description-text">Active Cases</div>
+                    <div class="cases__active-description-icon">
+                        <svg class="arrow-down">
+                            <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="cases__recovered">
+                <div class="cases__recovered-no"></div>
+                <div class="cases__recovered-description">
+                    <div class="cases__recovered-description-text">Recovered Cases</div>
+                    <div class="cases__recovered-description-icon">
+                        <svg class="arrow-up">
+                            <use xlink:href="img/sprite.svg#icon-arrow-up2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__recovered-delta">
+                </div>
+            </div>
+            <div class="cases__death">
+                <div class="cases__death-no"></div>
+                <div class="cases__death-description">
+                    <div class="cases__death-description-text">Death Cases</div>
+                    <div class="cases__death-description-icon">
+                        <svg class="arrow-down">
+                            <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__death-delta">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

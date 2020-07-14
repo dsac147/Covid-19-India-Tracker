@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__icon{
+        padding-right: 2rem;
+    }
+
+    &__text{
+        font-size: $font-size-large;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+}
+
+#virus{
+    height: 5rem;
+    width: 5rem;
+}

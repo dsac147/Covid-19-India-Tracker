@@ -1,0 +1,57 @@
+.cases{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin: 2rem 0 2rem 0;
+    &__total,
+    &__active,
+    &__recovered,
+    &__death{
+        text-align: left;
+        padding: 2rem 5rem 2rem 5rem;
+        background-color:$color-body;
+        border-radius: 6px;;
+        &-no{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: $font-size-xlarge;
+        }
+        &-description{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            &-text{
+                font-size: $font-size-medium;
+            }
+            &-icon{
+                padding-left: 2rem;
+            }
+        }
+        &-delta{
+            font-size: $font-size-small;
+            letter-spacing: 2px;
+            text-align: center;
+            padding-top: 2rem;
+        }
+    }
+    &__active-no{
+        color: $active;
+    }
+    &__recovered-no,
+    &__recovered-delta{
+        color: $recovered;
+    }
+    &__death-no,
+    &__death-delta{
+        color: $fatal;
+    }
+}
+
+.arrow-up{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.arrow-down{
+    height: 2.5rem;
+    width: 2.5rem;
+}

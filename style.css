@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Noto+Sans:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  padding: 5rem 20rem 5rem 20rem;
+  background-color: #f3f2f9;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400; }
+
+.cases {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin: 2rem 0 2rem 0; }
+  .cases__total, .cases__active, .cases__recovered, .cases__death {
+    text-align: left;
+    padding: 2rem 5rem 2rem 5rem;
+    background-color: #f9f9f9;
+    border-radius: 6px; }
+    .cases__total-no, .cases__active-no, .cases__recovered-no, .cases__death-no {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 4rem; }
+    .cases__total-description, .cases__active-description, .cases__recovered-description, .cases__death-description {
+      display: flex;
+      align-items: center;
+      justify-content: start; }
+      .cases__total-description-text, .cases__active-description-text, .cases__recovered-description-text, .cases__death-description-text {
+        font-size: 2.5rem; }
+      .cases__total-description-icon, .cases__active-description-icon, .cases__recovered-description-icon, .cases__death-description-icon {
+        padding-left: 2rem; }
+    .cases__total-delta, .cases__active-delta, .cases__recovered-delta, .cases__death-delta {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-align: center;
+      padding-top: 2rem; }
+  .cases__active-no {
+    color: #fe7104; }
+  .cases__recovered-no, .cases__recovered-delta {
+    color: #04ad19; }
+  .cases__death-no, .cases__death-delta {
+    color: #f20505; }
+
+.arrow-up {
+  height: 2.5rem;
+  width: 2.5rem; }
+
+.arrow-down {
+  height: 2.5rem;
+  width: 2.5rem; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .header__icon {
+    padding-right: 2rem; }
+  .header__text {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2.5px; }
+
+#virus {
+  height: 5rem;
+  width: 5rem; }
+
+.container {
+  display: flex;
+  flex-direction: column; }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@;800&family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
 *,
 *::after,
 *::before {
@@ -16,19 +16,34 @@ body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400; }
 
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2f9; }
+  .heading__text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2.5px; }
+
+.movedown {
+  padding: 0 0 2rem 0;
+  margin-bottom: -4rem;
+  z-index: 1; }
+
 .cases {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
   margin: 2rem 0 2rem 0; }
   .cases__total, .cases__active, .cases__recovered, .cases__death {
+    flex: 0 0 25%;
     text-align: left;
     padding: 2rem 5rem 2rem 5rem;
     background-color: #f9f9f9;
     border-radius: 6px; }
     .cases__total-no, .cases__active-no, .cases__recovered-no, .cases__death-no {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 4rem; }
     .cases__total-description, .cases__active-description, .cases__recovered-description, .cases__death-description {
       display: flex;
@@ -57,6 +72,10 @@ body {
 .arrow-down {
   height: 2.5rem;
   width: 2.5rem; }
+
+#visualization {
+  margin: 2rem 2rem 2rem 0;
+  width: 1180px; }
 
 .header {
   display: flex;

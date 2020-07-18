@@ -32,24 +32,26 @@
                         </svg>
                     </div>
                 </div>
-                <div class="cases__total-delta">
+                <div class="cases__total-delta animate__animated animate__flash animate__delay-2s">
                 </div>
             </div>
             <div class="cases__active animate__animated animate__slideInLeft">
                 <div class="cases__active-no"></div>
                 <div class="cases__active-description">
-                    <div class="cases__active-description-text">Active Cases</div>
+                    <div class="cases__active-description-text">Active</div>
                     <div class="cases__active-description-icon">
                         <svg class="arrow-down">
                             <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
                         </svg>
                     </div>
                 </div>
+                <div class="cases__active-delta ">
+                </div>
             </div>
             <div class="cases__recovered animate__animated animate__slideInRight">
                 <div class="cases__recovered-no"></div>
                 <div class="cases__recovered-description">
-                    <div class="cases__recovered-description-text">Recovered Cases</div>
+                    <div class="cases__recovered-description-text">Recovered</div>
                     <div class="cases__recovered-description-icon">
                         <svg class="arrow-up">
                             <use xlink:href="img/sprite.svg#icon-arrow-up2"></use>
@@ -62,7 +64,7 @@
             <div class="cases__death animate__animated animate__slideInRight animate__slow">
                 <div class="cases__death-no"></div>
                 <div class="cases__death-description">
-                    <div class="cases__death-description-text">Death Cases</div>
+                    <div class="cases__death-description-text">Deceased</div>
                     <div class="cases__death-description-icon">
                         <svg class="arrow-down">
                             <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
@@ -73,9 +75,13 @@
                 </div>
             </div>
         </div>
-        <div class="map animate__animated animate__fadeIn animate__slow">
-            <div id="visualization"> </div>
+        <div class="movedown heading animate__animated animate__fadeIn">
+            <div class="heading__text">ACTIVE CASES STATEWISE DISTRIBUTION</div>
         </div>
+        <div class="map animate__animated animate__fadeIn animate__slow">
+            <div id="visualization" class="map__visualization"> </div>
+        </div>
+        
     </div>
 
 

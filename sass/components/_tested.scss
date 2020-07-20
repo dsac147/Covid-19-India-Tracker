@@ -1,0 +1,33 @@
+.tested{
+    flex: 0 0 30%;
+    background-color: $color-body;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 2rem 0 5rem;
+    &__location{
+        color: $active;
+        font-size: $font-size-xlarge;
+        font-family: 'Montserrat';
+        font-weight: 700;
+    }
+    &__heading{
+        font-size: $font-size-small;
+    }
+    &__number{
+        font-size: $font-size-xlarge;
+        color: $fatal;
+        font-family: 'Montserrat';
+        font-weight: 700;
+    }
+    &__info{
+        font-size: $font-size-small;
+        &-source:link{
+            text-decoration: none;
+            color: $default-font-color;
+            background-color: $table;
+        }
+    }
+}

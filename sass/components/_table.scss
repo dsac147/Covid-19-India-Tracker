@@ -1,5 +1,6 @@
 .state{
     display: flex;
+    padding: 2rem 0;
 }
 
 .dataTable{
@@ -7,8 +8,11 @@
     overflow:auto;
     height: 80vh;
     &__table{
-        width: 97%;
+        width: 100%;
         border-collapse: collapse;
+        &-caption{
+            display: none;
+        }
     }
 }
 

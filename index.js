@@ -1,3 +1,8 @@
+const elements = {
+    tested__location : document.querySelector('.tested__location'),
+    tested__number : document.querySelector('.tested__number'),
+    tableBody : document.querySelector('.table-body')
+}
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -27,6 +32,14 @@ function abbreviateNumber(value) {
     return newValue;
 }
 
+function dateFormatter(x){
+    const date = new Date(x);
+    const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: '2-digit' });
+    const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat .formatToParts(date);
+    return `${day} ${month} ${year}`;
+}
+
+// var totalArr = [];
 async function getNationalData() 
 {
     try
@@ -48,6 +61,10 @@ async function getNationalData()
         document.querySelector('.cases__active-delta').textContent=`As on ` + this.date;
         document.querySelector('.cases__recovered-delta').textContent=`+ ` + numberWithCommas(this.dailyrecovered);
         document.querySelector('.cases__death-delta').textContent=`+ ` + numberWithCommas(this.dailydeceased);
+        // for(var i = 0 ; i<res.data.cases_time_series.length ; i++)
+        // {
+        //     totalArr.push(res.data.cases_time_series[i].totalconfirmed);
+        // }
     }
     catch (error)
     {
@@ -69,10 +86,10 @@ async function getStateData()
                     var total = resData[key].total
                     if (total.migrated !== undefined){//has migrations
                         if (total.deceased !== undefined) {//has deaths
-                            if (key === 'TT')
+                            if (key === 'TT')//Total cases
                             {
                                 var markUp = `
-                                <tr>
+                                <tr id="${key}">
                                     <td class="total total-name">${stateName(key)}</td>
                                     <td class="total total-total">${abbreviateNumber(total.confirmed)}</td>
                                     <td class="total total-active">${abbreviateNumber(parseInt(total.confirmed)-parseInt(total.recovered)-parseInt(total.deceased)-parseInt(total.migrated))}</td>
@@ -83,65 +100,80 @@ async function getStateData()
                             }
                             else
                             {
-                                var markUp = `
-                                <tr>
+                                markUp = `
+                                <tr id="${key}">
                                     <td class="state-name">${stateName(key)}</td>
                                     <td class="state-cases">${abbreviateNumber(total.confirmed)}</td>
                                     <td class="state-cases">${abbreviateNumber(parseInt(total.confirmed)-parseInt(total.recovered)-parseInt(total.deceased)-parseInt(total.migrated))}</td>
                                     <td class="state-cases">${abbreviateNumber(total.recovered)}</td>
                                     <td class="state-cases">${abbreviateNumber(total.deceased)}</td>
                                 </tr>`;
-                                document.querySelector('.table-body').insertAdjacentHTML('beforeend',markUp);
+                                elements.tableBody.insertAdjacentHTML('beforeend',markUp);
                             }
                         }
                         else{//no deaths
                             markUp = `
-                            <tr>
+                            <tr id="${key}">
                                 <td class="state-name">${stateName(key)}</td>
                                 <td class="state-cases">${abbreviateNumber(total.confirmed)}</td>
                                 <td class="state-cases">${abbreviateNumber(parseInt(total.confirmed)-parseInt(total.recovered)-parseInt(total.migrated))}</td>
                                 <td class="state-cases">${abbreviateNumber(total.recovered)}</td>
                                 <td class="state-cases">0</td>
                             </tr>`;
-                            document.querySelector('.table-body').insertAdjacentHTML('beforeend',markUp);
+                            elements.tableBody.insertAdjacentHTML('beforeend',markUp);
                         }
                     }
                     else{//no migrations
                         if (total.deceased !== undefined) {//has deaths
                             markUp = `
-                            <tr>
+                            <tr id="${key}">
                                 <td class="state-name">${stateName(key)}</td>
                                 <td class="state-cases">${abbreviateNumber(total.confirmed)}</td>
                                 <td class="state-cases">${abbreviateNumber(parseInt(total.confirmed)-parseInt(total.recovered)-parseInt(total.deceased))}</td>
                                 <td class="state-cases">${abbreviateNumber(total.recovered)}</td>
                                 <td class="state-cases">${abbreviateNumber(total.deceased)}</td>
                             </tr>`;
-                            document.querySelector('.table-body').insertAdjacentHTML('beforeend',markUp);
+                            elements.tableBody.insertAdjacentHTML('beforeend',markUp);
                         }
                         else{//no deaths
                             markUp = `
-                            <tr>
+                            <tr id="${key}">
                                 <td class="state-name">${stateName(key)}</td>
                                 <td class="state-cases">${abbreviateNumber(total.confirmed)}</td>
                                 <td class="state-cases">${abbreviateNumber(parseInt(total.confirmed)-parseInt(total.recovered))}</td>
                                 <td class="state-cases">${abbreviateNumber(total.recovered)}</td>
                                 <td class="state-cases">0</td>
                             </tr>`;
-                            document.querySelector('.table-body').insertAdjacentHTML('beforeend',markUp);
+                            elements.tableBody.insertAdjacentHTML('beforeend',markUp);
                         }
                     }
                 }
                 // else{//total doesnt exist
                 //     markUp = `
-                //     <tr>
+                //     <tr id="${key}">
                 //         <td>${key}</td>
                 //         <td colspan="4" class="state-cases__unavailable">Data Unavailable</td>
                 //     </tr>`;
-                //     document.querySelector('.table-body').insertAdjacentHTML('beforeend',markUp);
+                //     elements.tableBody.insertAdjacentHTML('beforeend',markUp);
                 // }
             }
-            
         }
+        elements.tested__location.textContent='India';
+        elements.tested__number.textContent=numberWithCommas(resData.TT.total.tested);
+        document.querySelector('.tested__info-date').textContent=`${dateFormatter(resData.TT.meta.tested.last_updated)}`;
+        document.querySelector('.tested__info-source').href=`${resData.TT.meta.tested.source}`;
+
+        $('tr').hover(
+            function() {
+                var stateId = this.id;
+                elements.tested__location.textContent = stateName(stateId);
+                elements.tested__number.textContent=numberWithCommas(resData[stateId].total.tested);
+            },
+            function() {
+                elements.tested__location.textContent='India';
+                elements.tested__number.textContent=numberWithCommas(resData.TT.total.tested);
+            }
+        );
     }
     catch (error)
     {

@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid19 Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animate.min.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <link rel="stylesheet" href="./assets/animate.min.css">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-    </script>
-
 </head>
 <body>
     <div class="container">
@@ -77,31 +71,44 @@
             </div>
         </div>
         <div class="movedown heading animate__animated animate__fadeIn">
-            <div class="heading__text">ACTIVE CASES STATEWISE DISTRIBUTION</div>
+            <div class="heading__text">ACTIVE CASES</div>
         </div>
         <div class="map animate__animated animate__fadeIn animate__slow">
             <div id="visualization" class="map__visualization"> </div>
         </div>
+        <div class="heading animate__animated animate__fadeIn">
+            <div class="heading__text">STATEWISE DISTRIBUTION OF CASES</div>
+        </div>
         <div class="state">
-            <div class="dataTable">
+            <div class="dataTable animate__animated animate__slideInLeft animate__slow">
                 <table class="dataTable__table">
+                    <caption class="dataTable__table-caption">STATEWISE DISTRIBUTION OF CASES</caption>
                     <thead class="table-heading">
                         <tr class="column-heading">
-                            <th class="column-heading__state-ut">State/UT</th>
-                            <th class="column-heading__total">Total</th>
-                            <th class="column-heading__active">Active</th>
-                            <th class="column-heading__recovered">Recovered</th>
-                            <th class="column-heading__deceased">Deceased</th>
+                            <th class="column-heading__state-ut" scope="State/UT">State/UT</th>
+                            <th class="column-heading__total" scope="Total">Total</th>
+                            <th class="column-heading__active" scope="Active">Active</th>
+                            <th class="column-heading__recovered" scope="Recovered">Recovered</th>
+                            <th class="column-heading__deceased" scope="Deceased">Deceased</th>
                           </tr>
                     </thead>
                     <tbody class="table-body"></tbody">
                     <tfoot class="table-footer"></tfoot>
                   </table>
             </div>
+            <div class="tested animate__animated animate__slideInRight animate__slow">
+                <div class="tested__location"></div>
+                <div class="tested__heading">Tested</div>
+                <div class="tested__number"></div>
+                <div class="tested__info">As of <span class="tested__info-date"></span><br>as per <a href="http://" class="tested__info-source">sources.</a></div>
+            </div>
         </div>
     </div>
 
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./assets/jquery.sparkline.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>

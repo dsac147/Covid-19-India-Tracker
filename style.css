@@ -82,15 +82,18 @@ body {
   width: 1180px; }
 
 .state {
-  display: flex; }
+  display: flex;
+  padding: 2rem 0; }
 
 .dataTable {
   flex: 0 0 70%;
   overflow: auto;
   height: 80vh; }
   .dataTable__table {
-    width: 97%;
+    width: 100%;
     border-collapse: collapse; }
+    .dataTable__table-caption {
+      display: none; }
 
 .column-heading {
   font-size: 2.5rem; }
@@ -128,7 +131,7 @@ tbody tr:nth-child(even) {
   background-color: #f3f2f9; }
 
 tbody tr:nth-child(odd) {
-  background-color: #e1ebfd; }
+  background-color: #cdeefd; }
 
 tfoot tr {
   background-color: #f9f9f9;
@@ -165,6 +168,34 @@ tfoot tr {
   font-weight: 400; }
   .state-cases__unavailable {
     text-align: center; }
+
+.tested {
+  flex: 0 0 30%;
+  background-color: #f9f9f9;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 0 2rem 0 5rem; }
+  .tested__location {
+    color: #007bff;
+    font-size: 4rem;
+    font-family: 'Montserrat';
+    font-weight: 700; }
+  .tested__heading {
+    font-size: 2rem; }
+  .tested__number {
+    font-size: 4rem;
+    color: #f20505;
+    font-family: 'Montserrat';
+    font-weight: 700; }
+  .tested__info {
+    font-size: 2rem; }
+    .tested__info-source:link {
+      text-decoration: none;
+      color: #262626;
+      background-color: #cdeefd; }
 
 .header {
   display: flex;

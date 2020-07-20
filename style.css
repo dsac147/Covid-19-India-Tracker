@@ -16,6 +16,10 @@ body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400; }
 
+::selection {
+  background-color: #007bff;
+  color: #fff; }
+
 .heading {
   display: flex;
   justify-content: center;
@@ -76,6 +80,91 @@ body {
 #visualization {
   margin: 2rem 2rem 2rem 0;
   width: 1180px; }
+
+.state {
+  display: flex; }
+
+.dataTable {
+  flex: 0 0 70%;
+  overflow: auto;
+  height: 80vh; }
+  .dataTable__table {
+    width: 97%;
+    border-collapse: collapse; }
+
+.column-heading {
+  font-size: 2.5rem; }
+  .column-heading__state-ut {
+    text-align: left; }
+  .column-heading__total {
+    text-align: right; }
+  .column-heading__active {
+    color: #007bff;
+    text-align: right; }
+  .column-heading__recovered {
+    color: #04ad19;
+    text-align: right; }
+  .column-heading__deceased {
+    color: #f20505;
+    text-align: right; }
+
+tr {
+  font-size: 2rem; }
+
+td {
+  padding: 1rem 1.5rem; }
+
+thead {
+  background-color: #f9f9f9; }
+
+th {
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 0;
+  /* Don't forget this, required for the stickiness */
+  padding: 1rem 1.5rem; }
+
+tbody tr:nth-child(even) {
+  background-color: #f3f2f9; }
+
+tbody tr:nth-child(odd) {
+  background-color: #e1ebfd; }
+
+tfoot tr {
+  background-color: #f9f9f9;
+  font-size: 2.5rem;
+  font-weight: 700; }
+
+.total {
+  background-color: #f9f9f9;
+  position: sticky;
+  bottom: 0;
+  /* Don't forget this, required for the stickiness */
+  font-family: 'Montserrat';
+  font-weight: 700; }
+  .total-name {
+    text-align: left; }
+  .total-total {
+    text-align: right; }
+  .total-active {
+    color: #007bff;
+    text-align: right; }
+  .total-recovered {
+    color: #04ad19;
+    text-align: right; }
+  .total-deceased {
+    color: #f20505;
+    text-align: right; }
+
+.state-name {
+  text-align: left; }
+
+.state-cases {
+  text-align: right;
+  font-family: 'Montserrat';
+  font-weight: 400; }
+  .state-cases__unavailable {
+    text-align: center; }
 
 .header {
   display: flex;

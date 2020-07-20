@@ -1,0 +1,104 @@
+.state{
+    display: flex;
+}
+
+.dataTable{
+    flex: 0 0 70%;
+    overflow:auto;
+    height: 80vh;
+    &__table{
+        width: 97%;
+        border-collapse: collapse;
+    }
+}
+
+.column-heading{
+    font-size: $font-size-medium;
+    &__state-ut{
+        text-align: left;
+    }
+    &__total{
+        text-align: right;
+    }
+    &__active{
+        color: $active;
+        text-align: right;
+    }
+    &__recovered{
+        color: $recovered;
+        text-align: right;
+    }
+    &__deceased{
+        color: $fatal;
+        text-align: right;
+    }
+}
+
+tr{
+    font-size: $font-size-small;
+}
+
+td{
+    padding: 1rem 1.5rem;
+}
+
+thead{
+    background-color: $color-body;
+}
+th {
+    background-color: $color-body;
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+    padding: 1rem 1.5rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: $color-background;
+  }
+tbody tr:nth-child(odd) {
+    background-color:$table;
+}
+
+tfoot tr{
+    background-color: $color-body;
+    font-size: $font-size-medium;
+    font-weight: 700;
+}
+
+.total{
+    background-color: $color-body;
+    position: sticky;
+    bottom: 0; /* Don't forget this, required for the stickiness */
+    font-family: 'Montserrat';
+    font-weight: 700;
+    &-name{
+        text-align: left;
+    }
+    &-total{
+        text-align: right;
+    }
+    &-active{
+        color: $active;
+        text-align: right;
+    }
+    &-recovered{
+        color: $recovered;
+        text-align: right;
+    }
+    &-deceased{
+        color: $fatal;
+        text-align: right;
+    }
+}
+
+.state-name{
+    text-align: left;
+}
+.state-cases{
+    text-align: right;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    &__unavailable{
+        text-align: center;
+    }
+}

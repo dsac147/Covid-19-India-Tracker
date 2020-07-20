@@ -6,6 +6,7 @@
     <title>Covid19 Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animate.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -81,11 +82,26 @@
         <div class="map animate__animated animate__fadeIn animate__slow">
             <div id="visualization" class="map__visualization"> </div>
         </div>
-        
+        <div class="state">
+            <div class="dataTable">
+                <table class="dataTable__table">
+                    <thead class="table-heading">
+                        <tr class="column-heading">
+                            <th class="column-heading__state-ut">State/UT</th>
+                            <th class="column-heading__total">Total</th>
+                            <th class="column-heading__active">Active</th>
+                            <th class="column-heading__recovered">Recovered</th>
+                            <th class="column-heading__deceased">Deceased</th>
+                          </tr>
+                    </thead>
+                    <tbody class="table-body"></tbody">
+                    <tfoot class="table-footer"></tfoot>
+                  </table>
+            </div>
+        </div>
     </div>
 
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <script src="./index.js"></script>
 </body>
 </html>

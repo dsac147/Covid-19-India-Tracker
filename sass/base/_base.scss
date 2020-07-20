@@ -21,5 +21,6 @@ body {
 }
 
 ::selection {
-    
+    background-color: $active;
+    color: #fff;
 }

@@ -1,18 +1,29 @@
 .cases{
     display: flex;
     flex-direction: row;
-    
-    
-    margin: 2rem 0 2rem 0;
+    @media only screen and (max-width: $bp-small) {
+        flex-wrap: wrap;
+    };
+    padding: 2rem 0 4rem 0;
     &__total,
     &__active,
     &__recovered,
     &__death{
         flex: 0 0 25%;
         text-align: left;
-        padding: 2rem 5rem 2rem 5rem;
+        padding: 2rem 5rem;
+        @media only screen and (max-width: $bp-largest) {
+            padding: 0 5rem 0 5rem;
+        };
+        @media only screen and (max-width: $bp-small) {
+            flex: 0 0 50%;
+            padding: 0 5rem 0 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        };
         background-color:$color-body;
-        border-radius: 6px;;
+        border-radius: 6px;
         &-no{
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -36,6 +47,27 @@
             padding-top: 2rem;
         }
     }
+
+    &__total,
+    &__active,
+    &__recovered{
+        @media only screen and (max-width: $bp-medium) {
+            padding: 0;
+            padding-left: 5rem;
+        };
+        @media only screen and (max-width: $bp-small) {
+            flex: 0 0 50%;
+            padding: 2rem 5rem 0 5rem;
+        };
+    }
+
+    &__recovered,
+    &__death{
+        @media only screen and (max-width: $bp-small) {
+            padding-top: 3rem;
+        };
+    }
+
     &__active-no{
         color: $active;
     }

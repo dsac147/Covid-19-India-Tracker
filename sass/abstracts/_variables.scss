@@ -1,9 +1,11 @@
-//font
+//font color
 $default-font-color:#262626;
 $active:#007bff;
 $table:#cdeefd;
 $recovered:#04ad19;
 $fatal:#f20505;
+
+//font size
 $font-size-large:3rem;
 $font-size-xlarge:4rem;
 $font-size-medium:2.5rem;
@@ -13,3 +15,9 @@ $font-size-xsmall:1.6rem;
 //body
 $color-background:#f3f2f9;
 $color-body:#f9f9f9;
+
+//responsive design
+$bp-largest:87.73em; //1124-px /12.81
+$bp-medium:70.25em; //900px/12.81
+$bp-small:53.55em; //686px/12.81
+$bp-xsmall:25em;//400px

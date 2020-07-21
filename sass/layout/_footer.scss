@@ -3,6 +3,9 @@
     padding-top: 2rem;
     align-items: center;
     background-color: $color-background;
+    @media only screen and (max-width: $bp-largest) {
+        background-color: $color-body;
+    };
     font-size: $font-size-xsmall;
     font-family: 'Noto Sans';
     &__left{
@@ -45,5 +48,9 @@
     &-image{
         width: 15rem;
         height: auto;
+        @media only screen and (max-width: $bp-medium) {
+            width: 10rem;
+            height: auto;
+        };
     }
 }

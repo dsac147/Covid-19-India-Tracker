@@ -7,6 +7,10 @@
     justify-content: center;
     text-align: left;
     padding: 0 2rem 0 5rem;
+    @media only screen and (max-width: $bp-small) {
+        text-align: center;
+        padding: 5rem 0 2rem 0;
+    };
     &__location{
         color: $active;
         font-size: $font-size-xlarge;

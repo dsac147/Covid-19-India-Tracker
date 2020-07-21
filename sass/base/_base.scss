@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 *,
 *::after,
 *::before {
@@ -10,12 +15,18 @@ html {
     // This defines what 1rem is
     font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
     overflow: auto;
-
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 50%;//1rem = 8px; 8/16px = 50%
+    };
 }
 
 body {
     box-sizing: border-box;
-    padding: 5rem 20rem 3rem 20rem;
+    padding: 5rem 10vw 3rem 10vw;
+    @media only screen and (max-width: $bp-largest) {
+        padding: 5rem 0 3rem 0;
+        background-color: $color-body;
+    };
     background-color: $color-background;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
@@ -30,12 +41,14 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
     background: $color-background;
+    width: 1rem;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: $active; 
+    width: 1rem;
 }
 
 ::selection {

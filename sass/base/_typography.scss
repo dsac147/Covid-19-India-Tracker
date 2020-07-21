@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     background-color: $color-background;
+    @media only screen and (max-width: $bp-largest) {
+        background-color: $color-body;
+    };
     &__text{
         font-size: $font-size-medium;
         font-weight: 700;

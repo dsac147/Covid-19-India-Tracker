@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
 *,
 *::after,
 *::before {
@@ -9,27 +13,36 @@
 html {
   font-size: 62.5%;
   overflow: auto; }
+  @media only screen and (max-width: 70.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
-  padding: 5rem 20rem 3rem 20rem;
+  padding: 5rem 10vw 3rem 10vw;
   background-color: #f3f2f9;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   overflow-y: scroll;
   overflow-x: hidden; }
+  @media only screen and (max-width: 87.73em) {
+    body {
+      padding: 5rem 0 3rem 0;
+      background-color: #f9f9f9; } }
 
 ::-webkit-scrollbar {
   width: 1rem; }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f3f2f9; }
+  background: #f3f2f9;
+  width: 1rem; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #007bff; }
+  background: #007bff;
+  width: 1rem; }
 
 ::selection {
   background-color: #007bff;
@@ -40,6 +53,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f3f2f9; }
+  @media only screen and (max-width: 87.73em) {
+    .heading {
+      background-color: #f9f9f9; } }
   .heading__text {
     font-size: 2.5rem;
     font-weight: 700;
@@ -53,13 +69,26 @@ body {
 .cases {
   display: flex;
   flex-direction: row;
-  margin: 2rem 0 2rem 0; }
+  padding: 2rem 0 4rem 0; }
+  @media only screen and (max-width: 53.55em) {
+    .cases {
+      flex-wrap: wrap; } }
   .cases__total, .cases__active, .cases__recovered, .cases__death {
     flex: 0 0 25%;
     text-align: left;
-    padding: 2rem 5rem 2rem 5rem;
+    padding: 2rem 5rem;
     background-color: #f9f9f9;
     border-radius: 6px; }
+    @media only screen and (max-width: 87.73em) {
+      .cases__total, .cases__active, .cases__recovered, .cases__death {
+        padding: 0 5rem 0 5rem; } }
+    @media only screen and (max-width: 53.55em) {
+      .cases__total, .cases__active, .cases__recovered, .cases__death {
+        flex: 0 0 50%;
+        padding: 0 5rem 0 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
     .cases__total-no, .cases__active-no, .cases__recovered-no, .cases__death-no {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -77,6 +106,17 @@ body {
       letter-spacing: 2px;
       text-align: center;
       padding-top: 2rem; }
+  @media only screen and (max-width: 70.25em) {
+    .cases__total, .cases__active, .cases__recovered {
+      padding: 0;
+      padding-left: 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .cases__total, .cases__active, .cases__recovered {
+      flex: 0 0 50%;
+      padding: 2rem 5rem 0 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .cases__recovered, .cases__death {
+      padding-top: 3rem; } }
   .cases__active-no {
     color: #007bff; }
   .cases__recovered-no, .cases__recovered-delta {
@@ -94,44 +134,66 @@ body {
 
 .chart {
   display: flex;
-  padding: 2rem 0; }
+  padding: 2rem 0;
+  width: 100%; }
   .chart__div-1 {
     flex: 0 0 100%;
-    height: 40rem; }
+    height: 40rem;
+    width: 80vw; }
+    @media only screen and (max-width: 87.73em) {
+      .chart__div-1 {
+        width: 100vw;
+        padding: 0 5rem; } }
+    @media only screen and (max-width: 53.55em) {
+      .chart__div-1 {
+        padding: 0; } }
 
 #visualization {
-  margin: 2rem 2rem 2rem 0;
-  width: 1180px; }
+  padding: 2rem 0rem 4rem 0;
+  overflow: hidden;
+  width: 78.8vw; }
+  @media only screen and (max-width: 87.73em) {
+    #visualization {
+      width: 100vw;
+      padding: 2rem 5rem 4rem 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    #visualization {
+      padding: 2rem 0rem 4rem 0rem; } }
 
 .state {
   display: flex;
-  padding: 2rem 0; }
+  padding: 2rem 0 4rem 0; }
+  @media only screen and (max-width: 87.73em) {
+    .state {
+      padding: 2rem 5rem 4rem 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .state {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0 4rem 0; } }
 
 .dataTable {
   flex: 0 0 70%;
   height: 80vh; }
+  @media only screen and (max-width: 53.55em) {
+    .dataTable {
+      flex: 0 0 100%; } }
   .dataTable__table {
     width: 100%;
     border-collapse: collapse; }
+    @media only screen and (max-width: 53.55em) {
+      .dataTable__table {
+        width: 100%;
+        height: 80vh;
+        overflow: auto; } }
     .dataTable__table-caption {
       display: none; }
 
-.scroll {
-  width: 2rem;
-  overflow: auto;
-  float: left; }
-
-.scroll2::-webkit-scrollbar-track {
-  background: #f9f9f9; }
-
-.scroll2::-webkit-scrollbar {
-  width: 0.5rem; }
-
-.scroll2::-webkit-scrollbar-thumb {
-  background: #007bff; }
-
 .column-heading {
   font-size: 2.5rem; }
+  @media only screen and (max-width: 53.55em) {
+    .column-heading {
+      justify-content: space-evenly; } }
   .column-heading__state-ut {
     text-align: left; }
   .column-heading__total {
@@ -204,6 +266,18 @@ tfoot tr {
   .state-cases__unavailable {
     text-align: center; }
 
+.scroll {
+  overflow: auto; }
+
+.scroll2::-webkit-scrollbar-track {
+  background: #f9f9f9; }
+
+.scroll2::-webkit-scrollbar {
+  width: 0.5rem; }
+
+.scroll2::-webkit-scrollbar-thumb {
+  background: #007bff; }
+
 .tested {
   flex: 0 0 30%;
   background-color: #f9f9f9;
@@ -213,6 +287,10 @@ tfoot tr {
   justify-content: center;
   text-align: left;
   padding: 0 2rem 0 5rem; }
+  @media only screen and (max-width: 53.55em) {
+    .tested {
+      text-align: center;
+      padding: 5rem 0 2rem 0; } }
   .tested__location {
     color: #007bff;
     font-size: 4rem;
@@ -239,6 +317,9 @@ tfoot tr {
   background-color: #f3f2f9;
   font-size: 1.6rem;
   font-family: 'Noto Sans'; }
+  @media only screen and (max-width: 87.73em) {
+    .footer {
+      background-color: #f9f9f9; } }
   .footer__left {
     flex: 0 0 42.5%;
     text-align: right; }
@@ -267,6 +348,10 @@ tfoot tr {
   .footer-image {
     width: 15rem;
     height: auto; }
+    @media only screen and (max-width: 70.25em) {
+      .footer-image {
+        width: 10rem;
+        height: auto; } }
 
 .header {
   display: flex;

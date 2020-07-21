@@ -5,6 +5,14 @@
 }
 
 #visualization{
-    margin: 2rem 2rem 2rem 0;
-    width: 1180px;//screen width = 1580px  body width = 1180px
+    padding: 2rem 0rem 4rem 0;
+    overflow: hidden;
+    width: 78.8vw;
+    @media only screen and (max-width: $bp-largest) {
+        width: 100vw;
+        padding: 2rem 5rem 4rem 5rem;
+    };
+    @media only screen and (max-width: $bp-small) {
+        padding: 2rem 0rem 4rem 0rem;
+    };
 }

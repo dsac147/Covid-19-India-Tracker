@@ -1,40 +1,43 @@
 .state{
     display: flex;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0;
+    @media only screen and (max-width: $bp-largest) {
+        padding: 2rem 5rem 4rem 5rem;
+    };
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0 4rem 0;
+    };
 }
 
 .dataTable{
     flex: 0 0 70%;
     height: 80vh;
+    @media only screen and (max-width: $bp-small) {
+        flex: 0 0 100%;
+    };
     &__table{
         width: 100%;
         border-collapse: collapse;
+        @media only screen and (max-width: $bp-small) {
+            width: 100%;
+            height: 80vh;
+            overflow: auto;
+        };
         &-caption{
             display: none;
         }
     }
 }
 
-.scroll {
-    width: 2rem;
-    overflow: auto;
-    float: left;
-}
 
-.scroll2::-webkit-scrollbar-track {
-    background: $color-body;
-}
-
-.scroll2::-webkit-scrollbar {
-    width: 0.5rem;
-}
-   
-.scroll2::-webkit-scrollbar-thumb {
-    background: $active; 
-}
 
 .column-heading{
     font-size: $font-size-medium;
+    @media only screen and (max-width: $bp-small) {
+      justify-content: space-evenly;  
+    };
     &__state-ut{
         text-align: left;
     }
@@ -122,4 +125,21 @@ tfoot tr{
     &__unavailable{
         text-align: center;
     }
+}
+
+//scrollbar
+.scroll {
+    overflow: auto;
+}
+
+.scroll2::-webkit-scrollbar-track {
+    background: $color-body;
+}
+
+.scroll2::-webkit-scrollbar {
+    width: 0.5rem;
+}
+   
+.scroll2::-webkit-scrollbar-thumb {
+    background: $active; 
 }

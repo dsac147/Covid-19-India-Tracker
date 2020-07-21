@@ -39,19 +39,20 @@ function dateFormatter(x){
     return `${day} ${month} ${year}`;
 }
 
-var totalArr = [];
 async function getNationalData() 
 {
     try
     {
         const res = await axios(`https://api.covid19india.org/data.json`);
+        const mig = await axios(`https://api.covid19india.org/v3/data.json`);
+        this.migrated = mig.data.TT.total.migrated;
         this.totalconfirmed = res.data.cases_time_series[res.data.cases_time_series.length-1].totalconfirmed;
         this.totalrecovered = res.data.cases_time_series[res.data.cases_time_series.length-1].totalrecovered;
         this.totaldeceased = res.data.cases_time_series[res.data.cases_time_series.length-1].totaldeceased;
         this.dailyconfirmed = res.data.cases_time_series[res.data.cases_time_series.length-1].dailyconfirmed;
         this.dailydeceased = res.data.cases_time_series[res.data.cases_time_series.length-1].dailydeceased;
         this.dailyrecovered = res.data.cases_time_series[res.data.cases_time_series.length-1].dailyrecovered;
-        this.totalactive = parseInt(this.totalconfirmed)-parseInt(this.totalrecovered)-parseInt(this.totaldeceased);
+        this.totalactive = parseInt(this.totalconfirmed)-parseInt(this.totalrecovered)-parseInt(this.totaldeceased)-parseInt(this.migrated);
         this.date = res.data.cases_time_series[res.data.cases_time_series.length-1].date;
         document.querySelector('.cases__active-no').textContent=numberWithCommas(this.totalactive);
         document.querySelector('.cases__total-no').textContent=numberWithCommas(this.totalconfirmed);
@@ -61,10 +62,6 @@ async function getNationalData()
         document.querySelector('.cases__active-delta').textContent=`As on ` + this.date;
         document.querySelector('.cases__recovered-delta').textContent=`+ ` + numberWithCommas(this.dailyrecovered);
         document.querySelector('.cases__death-delta').textContent=`+ ` + numberWithCommas(this.dailydeceased);
-        for(var i = 0 ; i<res.data.cases_time_series.length ; i++)
-        {
-            totalArr.push(res.data.cases_time_series[i].totalconfirmed);
-        }
     }
     catch (error)
     {

@@ -1,0 +1,49 @@
+.footer{
+    display: flex;
+    padding: 2rem 0;
+    align-items: center;
+    background-color: $color-background;
+    font-size: $font-size-xsmall;
+    font-family: 'Noto Sans';
+    &__left{
+        flex: 0 0 42.5%;
+        text-align: right;
+        &-text{
+            &-link{
+                text-decoration: none;
+                color: $default-font-color;
+                background-color: $table;
+                font-family: 'Montserrat';
+            }
+        }
+    }
+    &__right{
+        flex: 0 0 42.5%;
+        text-align: left;
+        &-text{
+            &-github{
+                display: flex;
+                align-items: center;
+                margin-bottom: -2rem;
+                &-icon{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+                &-text{
+                    padding-left: 1rem;
+                }
+            }
+            &-link{
+                font-family: 'Montserrat';
+            }
+        }
+    }
+    &__center{
+        flex: 0 0 15%;
+        text-align: center;
+    }
+    &-image{
+        width: 15rem;
+        height: auto;
+    }
+}

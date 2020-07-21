@@ -204,6 +204,42 @@ tfoot tr {
       color: #262626;
       background-color: #cdeefd; }
 
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  align-items: center;
+  background-color: #f3f2f9;
+  font-size: 1.6rem;
+  font-family: 'Noto Sans'; }
+  .footer__left {
+    flex: 0 0 42.5%;
+    text-align: right; }
+    .footer__left-text-link {
+      text-decoration: none;
+      color: #262626;
+      background-color: #cdeefd;
+      font-family: 'Montserrat'; }
+  .footer__right {
+    flex: 0 0 42.5%;
+    text-align: left; }
+    .footer__right-text-github {
+      display: flex;
+      align-items: center;
+      margin-bottom: -2rem; }
+      .footer__right-text-github-icon {
+        width: 2.5rem;
+        height: 2.5rem; }
+      .footer__right-text-github-text {
+        padding-left: 1rem; }
+    .footer__right-text-link {
+      font-family: 'Montserrat'; }
+  .footer__center {
+    flex: 0 0 15%;
+    text-align: center; }
+  .footer-image {
+    width: 15rem;
+    height: auto; }
+
 .header {
   display: flex;
   justify-content: center;

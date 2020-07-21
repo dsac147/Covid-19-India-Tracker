@@ -9,15 +9,33 @@
 html {
     // This defines what 1rem is
     font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    overflow: auto;
 
 }
 
 body {
     box-sizing: border-box;
-    padding: 5rem 20rem 5rem 20rem;
+    padding: 5rem 20rem 3rem 20rem;
     background-color: $color-background;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: $color-background;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $active; 
 }
 
 ::selection {

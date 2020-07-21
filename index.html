@@ -15,7 +15,7 @@
     <meta property="og:description" content="Modern Dashboard for analysis of Covid-19 cases in India"/>
     <title>Covid-19 India Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./assets/animate.min.css">
+    <!-- <link rel="stylesheet" href="./assets/animate.min.css"> -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
@@ -85,11 +85,11 @@
             <div class="heading__text">STATEWISE DISTRIBUTION OF CASES</div>
         </div>
         <div class="state">
-            <div class="dataTable animate__animated animate__slideInLeft animate__slow">
+            <div class="dataTable scroll scroll2 animate__animated animate__slideInLeft animate__slow">
                 <table class="dataTable__table">
                     <caption class="dataTable__table-caption">STATEWISE DISTRIBUTION OF CASES</caption>
                     <thead class="table-heading">
-                        <tr class="column-heading">
+                        <tr class="column-heading" id="TT">
                             <th class="column-heading__state-ut" scope="State/UT">State/UT</th>
                             <th class="column-heading__total" scope="Total">Total</th>
                             <th class="column-heading__active" scope="Active">Active</th>
@@ -105,7 +105,7 @@
                 <div class="tested__location"></div>
                 <div class="tested__heading">Tested</div>
                 <div class="tested__number"></div>
-                <div class="tested__info">As of <span class="tested__info-date"></span><br>as per <a href="http://" class="tested__info-source">sources.</a></div>
+                <div class="tested__info">As of <span class="tested__info-date"></span><br>as per <a href="http://" class="tested__info-source" target="_blank">sources.</a></div>
             </div>
         </div>
         <div class="movedown heading animate__animated animate__fadeIn">
@@ -125,32 +125,32 @@
                 <div class="footer__left-text">
                     Your're still not wearing a mask?<br>
                     You're part of the problem.<br>
-                    Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link">covidiot.</a>
+                    Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link" target="_blank">covidiot.</a>
                 </div>
             </div>
-            <div class="footer__center"><img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image"></div>
+            <div class="footer__center">
+                <a href="https://www.reddit.com/r/funny/comments/flkwxn/when_fires_arent_the_biggest_problem_anymore/" target="_blank">
+                        <img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image">
+                </a>
+            </div>
             <div class="footer__right">
                 <div class="footer__right-text">
                     <div class="footer__right-text-github">
                         <svg class="icon icon-github footer__right-text-github-icon"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
                         <div class="footer__right-text-github-text">
-                            Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link"> Github</a>
+                            Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link" target="_blank"> Github</a>
                         </div> 
                     </div>
                     <br>
-                    All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link">COVID-19 India Org<br>Data Operations Group</a>
+                    All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link" target="_blank">COVID-19 India Org<br>Data Operations Group</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script
-            src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-            crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
     <script src="./index.js"></script>
-</body>
+</body>>
 </html>

@@ -5,7 +5,6 @@
 
 .dataTable{
     flex: 0 0 70%;
-    overflow:auto;
     height: 80vh;
     &__table{
         width: 100%;
@@ -14,6 +13,24 @@
             display: none;
         }
     }
+}
+
+.scroll {
+    width: 2rem;
+    overflow: auto;
+    float: left;
+}
+
+.scroll2::-webkit-scrollbar-track {
+    background: $color-body;
+}
+
+.scroll2::-webkit-scrollbar {
+    width: 0.5rem;
+}
+   
+.scroll2::-webkit-scrollbar-thumb {
+    background: $active; 
 }
 
 .column-heading{

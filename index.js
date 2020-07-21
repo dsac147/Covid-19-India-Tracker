@@ -39,7 +39,7 @@ function dateFormatter(x){
     return `${day} ${month} ${year}`;
 }
 
-// var totalArr = [];
+var totalArr = [];
 async function getNationalData() 
 {
     try
@@ -61,10 +61,10 @@ async function getNationalData()
         document.querySelector('.cases__active-delta').textContent=`As on ` + this.date;
         document.querySelector('.cases__recovered-delta').textContent=`+ ` + numberWithCommas(this.dailyrecovered);
         document.querySelector('.cases__death-delta').textContent=`+ ` + numberWithCommas(this.dailydeceased);
-        // for(var i = 0 ; i<res.data.cases_time_series.length ; i++)
-        // {
-        //     totalArr.push(res.data.cases_time_series[i].totalconfirmed);
-        // }
+        for(var i = 0 ; i<res.data.cases_time_series.length ; i++)
+        {
+            totalArr.push(res.data.cases_time_series[i].totalconfirmed);
+        }
     }
     catch (error)
     {
@@ -183,7 +183,58 @@ async function getStateData()
 
 getStateData();
 
-google.load('visualization', '1', {'packages': ['geochart'],"mapsApiKey": "AIzaSyBKZkYtQriB88zglKW8JGqHmKI_27qok5c"});
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart2);
+
+function drawChart2() {
+        // grab the CSV
+    $.get("https://api.covid19india.org/csv/latest/case_time_series.csv", function(csvString) 
+    {
+            // transform the CSV string into a 2-dimensional array
+        var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+        
+            // this new DataTable object holds all the data
+        var dataTable = new google.visualization.arrayToDataTable(arrayData);
+            
+            // this view can select a subset of the data at a time
+        var dataView = new google.visualization.DataView(dataTable);
+        
+        dataView.setColumns([0,5,3,1]);
+
+        dataView = dataView.toDataTable();
+
+        var options = {
+        titlePosition:'none',
+        hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: true},showTextEvery: 15,maxAlternation:1,slantedText:true,slantedTextAngle:30,},
+        vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: true},format: 'short'},
+        legend:{alignment:'center',textStyle:{ color: '#262626',bold: true}},
+        isStacked: true,
+        forceIFrame: true,
+        areaOpacity: 0.5,
+        backgroundColor: '#f9f9f9',
+        chartArea:{left:'10%',top:'15%',width:'72%',height:'55%',backgroundColor:'#f9f9f9'},
+        colors:['#f20505','#04ad19','#007bff'],
+        crosshair: { trigger: 'both' },
+        fontName:'Montserrat',
+        fontSize:'16',
+        animation:{
+            startup:true,
+            duration: 3000,
+            easing: 'out',
+          }
+        };
+        
+        var chart = new google.visualization.AreaChart(document.getElementById('chart__div-1'));
+        google.visualization.events.addListener(chart, 'ready',
+          function() {
+            document.querySelector('iframe').loading="lazy";
+          });
+        chart.draw(dataView, options);
+    });
+}
+
+//Statewise distribution of cases Map
+google.load('visualization', 'current', {'packages': ['geochart'],"mapsApiKey": "AIzaSyBKZkYtQriB88zglKW8JGqHmKI_27qok5c"});
 google.setOnLoadCallback(drawVisualization);
 
 function drawVisualization() {
@@ -219,9 +270,14 @@ function drawVisualization() {
                                fontSize: 20,
                                }, showColorCode: true},
         legend: 'none',
+        forceIFrame: true
     };
 
     var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+    google.visualization.events.addListener(geochart, 'ready',
+          function() {
+            document.querySelector('iframe').loading="lazy";
+          });
     geochart.draw(dataView, opts);
 
     });

@@ -77,6 +77,13 @@ body {
   height: 2.5rem;
   width: 2.5rem; }
 
+.chart {
+  display: flex;
+  padding: 2rem 0; }
+  .chart__div-1 {
+    flex: 0 0 100%;
+    height: 40rem; }
+
 #visualization {
   margin: 2rem 2rem 2rem 0;
   width: 1180px; }

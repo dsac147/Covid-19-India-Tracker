@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid19 Tracker</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Covid19 India Tracker"/>
+    <meta property="og:url" content="https://dsac147.github.io/Covid-19-India-Tracker/"/>
+    <meta property="og:description" content="Modern Dashboard for analysis of Covid-19 cases in India"/>
+    <title>Covid-19 India Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./assets/animate.min.css">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -29,6 +38,7 @@
                 </div>
                 <div class="cases__total-delta animate__animated animate__flash animate__delay-2s">
                 </div>
+                
             </div>
             <div class="cases__active animate__animated animate__slideInLeft">
                 <div class="cases__active-no"></div>
@@ -70,12 +80,6 @@
                 </div>
             </div>
         </div>
-        <div class="movedown heading animate__animated animate__fadeIn">
-            <div class="heading__text">ACTIVE CASES</div>
-        </div>
-        <div class="map animate__animated animate__fadeIn animate__slow">
-            <div id="visualization" class="map__visualization"> </div>
-        </div>
         <div class="heading animate__animated animate__fadeIn">
             <div class="heading__text">STATEWISE DISTRIBUTION OF CASES</div>
         </div>
@@ -90,7 +94,7 @@
                             <th class="column-heading__active" scope="Active">Active</th>
                             <th class="column-heading__recovered" scope="Recovered">Recovered</th>
                             <th class="column-heading__deceased" scope="Deceased">Deceased</th>
-                          </tr>
+                       </tr>
                     </thead>
                     <tbody class="table-body"></tbody">
                     <tfoot class="table-footer"></tfoot>
@@ -103,11 +107,27 @@
                 <div class="tested__info">As of <span class="tested__info-date"></span><br>as per <a href="http://" class="tested__info-source">sources.</a></div>
             </div>
         </div>
+        <div class="movedown heading animate__animated animate__fadeIn">
+            <div class="heading__text">ACTIVE CASES</div>
+        </div>
+        <div class="map animate__animated animate__fadeIn animate__slow">
+            <div id="visualization" class="map__visualization"> </div>
+        </div>
+        <div class="heading animate__animated animate__fadeIn">
+            <div class="heading__text">DAILY CASES TREND ANALYSIS</div>
+        </div>
+        <div class="chart animate__animated animate__fadeIn animate__slow">
+            <div id="chart__div-1" class="chart__div-1"></div>
+        </div>
+        
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="./assets/jquery.sparkline.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <script src="./index.js"></script>
 </body>

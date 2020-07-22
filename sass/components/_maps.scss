@@ -1,4 +1,8 @@
 .map{
+    @media only screen and (max-width: $bp-xsmall) {
+        position: relative;
+        z-index: 0;
+    };
     &__visualization{
         
     }
@@ -15,4 +19,21 @@
     @media only screen and (max-width: $bp-small) {
         padding: 2rem 0rem 4rem 0rem;
     };
+    @media only screen and (max-width: $bp-xsmall) {
+        position: absolute;
+        width: 130vw;
+        top: 0;
+        left: -15rem;
+        z-index: 10;
+        clip-path: polygon(20% 5%,80% 5%,80% 95%,20% 95%);
+    };
+    @media only screen and (max-width: $bp-mini) {
+        position: absolute;
+        width: 120vw;
+        top: 0;
+        left: -11rem;
+        z-index: 10;
+        clip-path: polygon(20% 5%,80% 5%,80% 95%,20% 95%);
+    };
+    
 }

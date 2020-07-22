@@ -1,13 +1,13 @@
 .footer{
-    display: flex;
-    padding-top: 2rem;
-    align-items: center;
     background-color: $color-background;
     font-size: $font-size-xsmall;
+    font-family: 'Noto Sans';
     @media only screen and (max-width: $bp-largest) {
         background-color: $color-body;
     };
-    font-family: 'Noto Sans';
+    @media only screen and (max-width: $bp-xsmall) {
+        position: relative;
+    };
     &__left{
         flex: 0 0 42.5%;
         text-align: right;
@@ -66,4 +66,22 @@
             height: auto;
         };
     }
+}
+
+.footer__box{
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+    @media only screen and (max-width: $bp-xsmall) {
+        position: absolute;
+        top: 130rem;//to be changed
+        left: 12rem;
+        margin-bottom: 5rem;
+    };
+    @media only screen and (max-width: $bp-mini) {
+        position: absolute;
+        top: 120rem;//to be changed
+        left: 12rem;
+        margin-bottom: 5rem;
+    };
 }

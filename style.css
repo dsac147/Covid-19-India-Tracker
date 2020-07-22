@@ -16,6 +16,9 @@ html {
   @media only screen and (max-width: 70.25em) {
     html {
       font-size: 50%; } }
+  @media only screen and (max-width: 42.15em) {
+    html {
+      font-size: 43.75%; } }
 
 body {
   box-sizing: border-box;
@@ -135,7 +138,8 @@ body {
 .chart {
   display: flex;
   padding: 2rem 0;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .chart__div-1 {
     flex: 0 0 100%;
     height: 40rem;
@@ -147,6 +151,33 @@ body {
     @media only screen and (max-width: 53.55em) {
       .chart__div-1 {
         padding: 0; } }
+    @media only screen and (max-width: 42.15em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 90rem; } }
+    @media only screen and (max-width: 39em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 80rem; } }
+
+@media only screen and (max-width: 42.15em) {
+  #chart {
+    position: relative; } }
+
+@media only screen and (max-width: 42.15em) {
+  #chart-heading {
+    position: absolute;
+    top: 85rem; } }
+
+@media only screen and (max-width: 39em) {
+  #chart-heading {
+    position: absolute;
+    top: 75rem; } }
+
+@media only screen and (max-width: 42.15em) {
+  .map {
+    position: relative;
+    z-index: 0; } }
 
 #visualization {
   padding: 2rem 0rem 4rem 0;
@@ -159,6 +190,22 @@ body {
   @media only screen and (max-width: 53.55em) {
     #visualization {
       padding: 2rem 0rem 4rem 0rem; } }
+  @media only screen and (max-width: 42.15em) {
+    #visualization {
+      position: absolute;
+      width: 130vw;
+      top: 0;
+      left: -15rem;
+      z-index: 10;
+      clip-path: polygon(20% 5%, 80% 5%, 80% 95%, 20% 95%); } }
+  @media only screen and (max-width: 39em) {
+    #visualization {
+      position: absolute;
+      width: 120vw;
+      top: 0;
+      left: -11rem;
+      z-index: 10;
+      clip-path: polygon(20% 5%, 80% 5%, 80% 95%, 20% 95%); } }
 
 .state {
   display: flex;
@@ -311,15 +358,15 @@ tfoot tr {
       background-color: #cdeefd; }
 
 .footer {
-  display: flex;
-  padding-top: 2rem;
-  align-items: center;
   background-color: #f3f2f9;
   font-size: 1.6rem;
   font-family: 'Noto Sans'; }
   @media only screen and (max-width: 87.73em) {
     .footer {
       background-color: #f9f9f9; } }
+  @media only screen and (max-width: 42.15em) {
+    .footer {
+      position: relative; } }
   .footer__left {
     flex: 0 0 42.5%;
     text-align: right; }
@@ -365,6 +412,23 @@ tfoot tr {
       .footer-image {
         width: 12.5rem;
         height: auto; } }
+
+.footer__box {
+  display: flex;
+  padding-top: 2rem;
+  align-items: center; }
+  @media only screen and (max-width: 42.15em) {
+    .footer__box {
+      position: absolute;
+      top: 130rem;
+      left: 12rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 39em) {
+    .footer__box {
+      position: absolute;
+      top: 120rem;
+      left: 12rem;
+      margin-bottom: 5rem; } }
 
 .header {
   display: flex;

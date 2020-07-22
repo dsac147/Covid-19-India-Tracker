@@ -113,41 +113,42 @@
         <div class="map animate__animated animate__fadeIn animate__slow">
             <div id="visualization" class="map__visualization"> </div>
         </div>
-        <div class="heading animate__animated animate__fadeIn">
-            <div class="heading__text">DAILY CASES TREND ANALYSIS</div>
+        <div class="heading animate__animated animate__fadeIn" id="chart">
+            <div class="heading__text" id="chart-heading">DAILY CASES TREND ANALYSIS</div>
         </div>
         <div class="chart animate__animated animate__fadeIn animate__slow">
             <div id="chart__div-1" class="chart__div-1"></div>
         </div>
         <div class="footer">
-            <div class="footer__left">
-                <div class="footer__left-text">
-                    Your're still not wearing a mask?<br>
-                    You're part of the problem.<br>
-                    Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link" target="_blank">covidiot.</a>
-                </div>
-            </div>
-            <div class="footer__center">
-                <a href="https://www.reddit.com/r/funny/comments/flkwxn/when_fires_arent_the_biggest_problem_anymore/" target="_blank">
-                        <img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image">
-                </a>
-            </div>
-            <div class="footer__right">
-                <div class="footer__right-text">
-                    <div class="footer__right-text-github">
-                        <a href="https://github.com/dsac147/Covid-19-India-Tracker" target="_blank">
-                            <svg class="icon icon-github footer__right-text-github-icon"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
-                        </a>
-                        <div class="footer__right-text-github-text">
-                            Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link" target="_blank"> Github</a>
-                        </div> 
+            <div class="footer__box">
+                <div class="footer__left">
+                    <div class="footer__left-text">
+                        Your're still not wearing a mask?<br>
+                        You're part of the problem.<br>
+                        Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link" target="_blank">covidiot.</a>
                     </div>
-                    <br>
-                    All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link" target="_blank">COVID-19 India<br>Org Data Operations Group</a>
+                </div>
+                <div class="footer__center">
+                    <a href="https://www.reddit.com/r/funny/comments/flkwxn/when_fires_arent_the_biggest_problem_anymore/" target="_blank">
+                            <img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image">
+                    </a>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__right-text">
+                        <div class="footer__right-text-github">
+                            <a href="https://github.com/dsac147/Covid-19-India-Tracker" target="_blank">
+                                <svg class="icon icon-github footer__right-text-github-icon"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
+                            </a>
+                            <div class="footer__right-text-github-text">
+                                Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link" target="_blank"> Github</a>
+                            </div> 
+                        </div>
+                        <br>
+                        All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link" target="_blank">COVID-19 India<br>Org Data Operations Group</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

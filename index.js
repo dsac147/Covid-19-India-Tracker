@@ -292,7 +292,8 @@ function drawVisualization() {
                                fontSize: 20,
                                }, showColorCode: true},
         legend: 'none',
-        forceIFrame: true
+        // forceIFrame: true,
+        magnifyingGlass:{enable: true, zoomFactor: 7.5}
     };
 
     var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
@@ -300,6 +301,7 @@ function drawVisualization() {
           function() {
             document.querySelector('iframe').loading="lazy";
           });
+    
     geochart.draw(dataView, opts);
 
     });
@@ -308,6 +310,7 @@ function drawVisualization() {
 //media queries
 var bpLargest = window.matchMedia( "(max-width: 1124px)" );
 var bpMedium = window.matchMedia( "(max-width: 850px)" );//850=670
+var bpSmall = window.matchMedia( "(max-width: 676px)" );//
 
 if (bpMedium.matches) {
     // window width is at less than 686px

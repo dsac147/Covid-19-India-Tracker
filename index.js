@@ -4,14 +4,6 @@ const elements = {
     tableBody : document.querySelector('.table-body')
 }
 
-window.odometerOptions = {
-    
-    format: '(,ddd)', // Change how digit groups are formatted, and how many digits are shown after the decimal point
-    duration: 10000, // Change how long the javascript expects the CSS animation to take
-    animation: 'count' // Count is a simpler animation method which just increments the value,
-                       // use it when you're looking for something more subtle.
-};
-
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -189,9 +181,9 @@ async function getStateData()
 getStateData();
 
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart2);
+google.charts.setOnLoadCallback(drawChart);
 
-function drawChart2() {
+function drawChart() {
         // grab the CSV
     $.get("https://api.covid19india.org/csv/latest/case_time_series.csv", function(csvString) 
     {
@@ -206,6 +198,7 @@ function drawChart2() {
         
         dataView.setColumns([0,5,3,1]);
 
+            //creating a copy of the dataTable to overcome the startup animation bug
         dataView = dataView.toDataTable();
 
         var options = {
@@ -226,8 +219,32 @@ function drawChart2() {
             startup:true,
             duration: 3000,
             easing: 'out',
-          }
+          },
         };
+
+        if (bpMedium.matches) {
+            // window width is at less than 670px
+            options = {
+                fontSize:'12',
+                titlePosition:'none',
+                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 30,maxAlternation:1,slantedText:true,slantedTextAngle:45,},
+                vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: false},format: 'short'},
+                legend:{alignment:'center',textStyle:{ color: '#262626',bold: false}},
+                isStacked: true,
+                forceIFrame: true,
+                areaOpacity: 0.5,
+                backgroundColor: '#f9f9f9',
+                chartArea:{left:'10%',top:'15%',width:'65%',height:'55%',backgroundColor:'#f9f9f9'},
+                colors:['#f20505','#04ad19','#007bff'],
+                crosshair: { trigger: 'both' },
+                fontName:'Montserrat',
+                animation:{
+                    startup:true,
+                    duration: 3000,
+                    easing: 'out',
+                },
+            };
+        }
         
         var chart = new google.visualization.AreaChart(document.getElementById('chart__div-1'));
         google.visualization.events.addListener(chart, 'ready',
@@ -286,4 +303,17 @@ function drawVisualization() {
     geochart.draw(dataView, opts);
 
     });
+}
+
+//media queries
+var bpLargest = window.matchMedia( "(max-width: 1124px)" );
+var bpMedium = window.matchMedia( "(max-width: 850px)" );//850=670
+
+if (bpMedium.matches) {
+    // window width is at less than 686px
+    $(".cases__active").addClass("animate__slideInRight");
+    $(".cases__total").removeClass("animate__slow");
+    $(".cases__death").removeClass("animate__slow");
+    $(".cases__recovered").removeClass("animate__slideInRight");
+    $(".cases__recovered").addClass("animate__slideInLeft");
 }

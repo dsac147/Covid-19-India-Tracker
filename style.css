@@ -323,6 +323,9 @@ tfoot tr {
   .footer__left {
     flex: 0 0 42.5%;
     text-align: right; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__left {
+        flex: 0 0 40%; } }
     .footer__left-text-link {
       text-decoration: none;
       color: #262626;
@@ -331,6 +334,9 @@ tfoot tr {
   .footer__right {
     flex: 0 0 42.5%;
     text-align: left; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__right {
+        flex: 0 0 40%; } }
     .footer__right-text-github {
       display: flex;
       align-items: center;
@@ -338,6 +344,10 @@ tfoot tr {
       .footer__right-text-github-icon {
         width: 2.5rem;
         height: 2.5rem; }
+        @media only screen and (max-width: 53.55em) {
+          .footer__right-text-github-icon {
+            width: 2rem;
+            height: 2rem; } }
       .footer__right-text-github-text {
         padding-left: 1rem; }
     .footer__right-text-link {
@@ -345,12 +355,15 @@ tfoot tr {
   .footer__center {
     flex: 0 0 15%;
     text-align: center; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__center {
+        flex: 0 0 20%; } }
   .footer-image {
     width: 15rem;
     height: auto; }
-    @media only screen and (max-width: 70.25em) {
+    @media only screen and (max-width: 53.55em) {
       .footer-image {
-        width: 10rem;
+        width: 12.5rem;
         height: auto; } }
 
 .header {

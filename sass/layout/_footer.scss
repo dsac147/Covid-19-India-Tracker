@@ -3,14 +3,17 @@
     padding-top: 2rem;
     align-items: center;
     background-color: $color-background;
+    font-size: $font-size-xsmall;
     @media only screen and (max-width: $bp-largest) {
         background-color: $color-body;
     };
-    font-size: $font-size-xsmall;
     font-family: 'Noto Sans';
     &__left{
         flex: 0 0 42.5%;
         text-align: right;
+        @media only screen and (max-width: $bp-small) {
+            flex: 0 0 40%;
+        };
         &-text{
             &-link{
                 text-decoration: none;
@@ -23,6 +26,9 @@
     &__right{
         flex: 0 0 42.5%;
         text-align: left;
+        @media only screen and (max-width: $bp-small) {
+            flex: 0 0 40%;
+        };
         &-text{
             &-github{
                 display: flex;
@@ -31,6 +37,10 @@
                 &-icon{
                     width: 2.5rem;
                     height: 2.5rem;
+                    @media only screen and (max-width: $bp-small) {
+                        width: 2rem;
+                        height: 2rem;
+                    };
                 }
                 &-text{
                     padding-left: 1rem;
@@ -44,12 +54,15 @@
     &__center{
         flex: 0 0 15%;
         text-align: center;
+        @media only screen and (max-width: $bp-small) {
+            flex: 0 0 20%;
+        };
     }
     &-image{
         width: 15rem;
         height: auto;
-        @media only screen and (max-width: $bp-medium) {
-            width: 10rem;
+        @media only screen and (max-width: $bp-small) {
+            width: 12.5rem;
             height: auto;
         };
     }

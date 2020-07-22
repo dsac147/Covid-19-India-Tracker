@@ -245,6 +245,30 @@ function drawChart() {
                 },
             };
         }
+
+        if (bpSmall.matches) {
+            // window width is at less than 670px
+            options = {
+                fontSize:'8',
+                titlePosition:'none',
+                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 30,maxAlternation:1,slantedText:true,slantedTextAngle:60,},
+                vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: false},format: 'short'},
+                legend:{alignment:'center',textStyle:{ color: '#262626',bold: false}},
+                isStacked: true,
+                forceIFrame: true,
+                areaOpacity: 0.5,
+                backgroundColor: '#f9f9f9',
+                chartArea:{left:'10%',top:'15%',width:'60%',height:'55%',backgroundColor:'#f9f9f9'},
+                colors:['#f20505','#04ad19','#007bff'],
+                crosshair: { trigger: 'both' },
+                fontName:'Montserrat',
+                animation:{
+                    startup:true,
+                    duration: 3000,
+                    easing: 'out',
+                },
+            };
+    }
         
         var chart = new google.visualization.AreaChart(document.getElementById('chart__div-1'));
         google.visualization.events.addListener(chart, 'ready',
@@ -292,7 +316,7 @@ function drawVisualization() {
                                fontSize: 20,
                                }, showColorCode: true},
         legend: 'none',
-        // forceIFrame: true,
+        forceIFrame: true,
         magnifyingGlass:{enable: true, zoomFactor: 7.5}
     };
 
@@ -307,10 +331,77 @@ function drawVisualization() {
     });
 }
 
+//insert footer based on size
+var footerMarkUp1 = `
+    <div class="footer__box">
+    <div class="footer__left">
+        <div class="footer__left-text">
+            <span>Your're still not wearing a mask?</span><br>
+            <span>You're part of the problem.</span><br>
+            <span>Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link" target="_blank">covidiot.</a></span>
+        </div>
+    </div>
+    <div class="footer__center">
+        <a href="https://www.reddit.com/r/funny/comments/flkwxn/when_fires_arent_the_biggest_problem_anymore/" target="_blank">
+                <img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image">
+        </a>
+    </div>
+    <div class="footer__right">
+        <div class="footer__right-text">
+            <div class="footer__right-text-github">
+                <a href="https://github.com/dsac147/Covid-19-India-Tracker" target="_blank">
+                    <svg class="icon icon-github footer__right-text-github-icon"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
+                </a>
+                <div class="footer__right-text-github-text">
+                    <span>Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link" target="_blank"> Github</a></span>
+                </div> 
+            </div>
+            <div>
+                <br>All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link" target="_blank">COVID-19 India,<br>
+                Org Data Operations Group</a>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+`
+var footerMarkUp2 = `
+    <div class="footer__box">
+    <div class="footer__left">
+        <div class="footer__left-text">
+            <span>Your're still not wearing a mask?</span><br>
+            <span>You're part of the problem.</span><br>
+            <span>Don't be a <a href="https://www.instagram.com/p/B-Cl5zPgEFj/?igshid=ul9ljnji5bk4" class="footer__left-text-link" target="_blank">covidiot.</a></span>
+        </div>
+    </div>
+    <div class="footer__center">
+        <a href="https://www.reddit.com/r/funny/comments/flkwxn/when_fires_arent_the_biggest_problem_anymore/" target="_blank">
+                <img src="./img/catwithmask.png" alt="Wear a Mask" class="footer-image">
+        </a>
+    </div>
+    <div class="footer__right">
+        <div class="footer__right-text">
+            <div>
+                All data sourced from <a href="https://api.covid19india.org/" class="footer__right-text-link" target="_blank">COVID-19 India,
+                Org Data Operations Group</a>
+            </div>
+            <div class="footer__right-text-github">
+                <a href="https://github.com/dsac147/Covid-19-India-Tracker" target="_blank">
+                    <svg class="icon icon-github footer__right-text-github-icon"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
+                </a>
+                <div class="footer__right-text-github-text">
+                    Checkout the project on<a href="https://github.com/dsac147/Covid-19-India-Tracker" class="footer__left-text-link" target="_blank"> Github</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+    </div>
+`
+
 //media queries
 var bpLargest = window.matchMedia( "(max-width: 1124px)" );
 var bpMedium = window.matchMedia( "(max-width: 850px)" );//850=670
-var bpSmall = window.matchMedia( "(max-width: 676px)" );//
+var bpSmall = window.matchMedia( "(max-width: 676px)" );//540
 
 if (bpMedium.matches) {
     // window width is at less than 686px
@@ -319,4 +410,11 @@ if (bpMedium.matches) {
     $(".cases__death").removeClass("animate__slow");
     $(".cases__recovered").removeClass("animate__slideInRight");
     $(".cases__recovered").addClass("animate__slideInLeft");
+}
+
+if (bpSmall.matches) {
+    document.querySelector('.footer').insertAdjacentHTML('beforeend',footerMarkUp2);
+}
+else{
+    document.querySelector('.footer').insertAdjacentHTML('beforeend',footerMarkUp1);
 }

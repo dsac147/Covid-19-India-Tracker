@@ -19,6 +19,9 @@ html {
   @media only screen and (max-width: 42.15em) {
     html {
       font-size: 43.75%; } }
+  @media only screen and (max-width: 39em) {
+    html {
+      font-size: 37.5%; } }
 
 body {
   box-sizing: border-box;
@@ -158,7 +161,15 @@ body {
     @media only screen and (max-width: 39em) {
       .chart__div-1 {
         position: absolute;
+        top: 88rem; } }
+    @media only screen and (max-width: 33.17em) {
+      .chart__div-1 {
+        position: absolute;
         top: 80rem; } }
+    @media only screen and (max-width: 29.27em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 70rem; } }
 
 @media only screen and (max-width: 42.15em) {
   #chart {
@@ -172,7 +183,17 @@ body {
 @media only screen and (max-width: 39em) {
   #chart-heading {
     position: absolute;
+    top: 83rem; } }
+
+@media only screen and (max-width: 33.17em) {
+  #chart-heading {
+    position: absolute;
     top: 75rem; } }
+
+@media only screen and (max-width: 29.27em) {
+  #chart-heading {
+    position: absolute;
+    top: 65rem; } }
 
 @media only screen and (max-width: 42.15em) {
   .map {
@@ -315,6 +336,9 @@ tfoot tr {
 
 .scroll {
   overflow: auto; }
+  @media only screen and (max-width: 53.55em) {
+    .scroll {
+      overflow: visible; } }
 
 .scroll2::-webkit-scrollbar-track {
   background: #f9f9f9; }
@@ -367,6 +391,9 @@ tfoot tr {
   @media only screen and (max-width: 42.15em) {
     .footer {
       position: relative; } }
+  @media only screen and (max-width: 33.17em) {
+    .footer {
+      font-size: 1.2rem; } }
   .footer__left {
     flex: 0 0 42.5%;
     text-align: right; }
@@ -386,8 +413,14 @@ tfoot tr {
         flex: 0 0 40%; } }
     .footer__right-text-github {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       margin-bottom: -2rem; }
+      @media only screen and (max-width: 42.15em) {
+        .footer__right-text-github {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0rem;
+          padding-top: .5rem; } }
       .footer__right-text-github-icon {
         width: 2.5rem;
         height: 2.5rem; }
@@ -421,13 +454,21 @@ tfoot tr {
     .footer__box {
       position: absolute;
       top: 130rem;
-      left: 12rem;
       margin-bottom: 5rem; } }
   @media only screen and (max-width: 39em) {
     .footer__box {
       position: absolute;
-      top: 120rem;
-      left: 12rem;
+      top: 125rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 33.17em) {
+    .footer__box {
+      position: absolute;
+      top: 119rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 29.27em) {
+    .footer__box {
+      position: absolute;
+      top: 110rem;
       margin-bottom: 5rem; } }
 
 .header {

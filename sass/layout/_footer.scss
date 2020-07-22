@@ -8,6 +8,9 @@
     @media only screen and (max-width: $bp-xsmall) {
         position: relative;
     };
+    @media only screen and (max-width: $bp-xmini) {
+        font-size: $font-size-mini;
+    };
     &__left{
         flex: 0 0 42.5%;
         text-align: right;
@@ -29,11 +32,19 @@
         @media only screen and (max-width: $bp-small) {
             flex: 0 0 40%;
         };
+        
         &-text{
             &-github{
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 margin-bottom: -2rem;
+                @media only screen and (max-width: $bp-xsmall) {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0rem;
+                    padding-top: .5rem;
+                };
+                
                 &-icon{
                     width: 2.5rem;
                     height: 2.5rem;
@@ -75,13 +86,18 @@
     @media only screen and (max-width: $bp-xsmall) {
         position: absolute;
         top: 130rem;//to be changed
-        left: 12rem;
         margin-bottom: 5rem;
     };
     @media only screen and (max-width: $bp-mini) {
         position: absolute;
-        top: 120rem;//to be changed
-        left: 12rem;
-        margin-bottom: 5rem;
+        top: 125rem;//to be changed
+    };
+    @media only screen and (max-width: $bp-xmini) {
+        position: absolute;
+        top: 119rem;//to be changed
+    };
+    @media only screen and (max-width: $bp-xxmini) {
+        position: absolute;
+        top: 110rem;//to be changed
     };
 }

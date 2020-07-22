@@ -21,6 +21,9 @@ html {
     @media only screen and (max-width: $bp-xsmall) {
         font-size: 43.75%;//1rem = 7px; 7/16px = 43.75%
     };
+    @media only screen and (max-width: $bp-mini) {
+        font-size: 37.5%;//1rem = 6px; 6/16px = 37.5%
+    };
 }
 
 body {

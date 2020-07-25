@@ -382,6 +382,8 @@ tfoot tr {
       text-decoration: none;
       color: #262626;
       background-color: #cdeefd; }
+  .tested__misc {
+    font-size: 2rem; }
 
 .footer {
   background-color: #f3f2f9;
@@ -393,9 +395,6 @@ tfoot tr {
   @media only screen and (max-width: 42.15em) {
     .footer {
       position: relative; } }
-  @media only screen and (max-width: 33.17em) {
-    .footer {
-      font-size: 1.2rem; } }
   .footer__left {
     flex: 0 0 42.5%;
     text-align: right; }
@@ -463,7 +462,7 @@ tfoot tr {
       top: 125rem; } }
   @media only screen and (max-width: 33.17em) {
     .footer__box {
-      top: 119rem; } }
+      top: 122rem; } }
   @media only screen and (max-width: 29.27em) {
     .footer__box {
       top: 113rem; } }

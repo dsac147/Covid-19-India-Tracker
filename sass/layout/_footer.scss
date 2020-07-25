@@ -8,9 +8,6 @@
     @media only screen and (max-width: $bp-xsmall) {
         position: relative;
     };
-    @media only screen and (max-width: $bp-xmini) {
-        font-size: $font-size-mini;
-    };
     &__left{
         flex: 0 0 42.5%;
         text-align: right;
@@ -93,7 +90,7 @@
         top: 125rem;//to be changed
     };
     @media only screen and (max-width: $bp-xmini) {
-        top: 119rem;//to be changed
+        top: 122rem;//to be changed
     };
     @media only screen and (max-width: $bp-xxmini) {
         top: 113rem;//to be changed

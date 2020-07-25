@@ -62,6 +62,19 @@ async function getNationalData()
         document.querySelector('.cases__active-delta').textContent=`As on ` + this.date;
         document.querySelector('.cases__recovered-delta').textContent=`+ ` + numberWithCommas(this.dailyrecovered);
         document.querySelector('.cases__death-delta').textContent=`+ ` + numberWithCommas(this.dailydeceased);
+        $(".cases__total").addClass("animate__slideInLeft animate__slow");
+        $(".cases__active").addClass("animate__slideInLeft");
+        $(".cases__recovered").addClass("animate__slideInRight");
+        $(".cases__death").addClass("animate__slideInRight animate__slow");
+        if (bpMedium.matches) {
+            // window width is at less than 686px
+            $(".cases__active").removeClass("animate__slideInLeft");
+            $(".cases__active").addClass("animate__slideInRight");
+            $(".cases__total").removeClass("animate__slow");
+            $(".cases__death").removeClass("animate__slow");
+            $(".cases__recovered").removeClass("animate__slideInRight");
+            $(".cases__recovered").addClass("animate__slideInLeft");
+        }
     }
     catch (error)
     {
@@ -247,7 +260,7 @@ function drawChart() {
         }
 
         if (bpSmall.matches) {
-            // window width is at less than 670px
+            // window width is at less than 540px
             options = {
                 fontSize:'8',
                 titlePosition:'none',
@@ -319,6 +332,26 @@ function drawVisualization() {
         forceIFrame: true,
         magnifyingGlass:{enable: true, zoomFactor: 7.5}
     };
+
+    if (bpSmall.matches) {
+        // window width is at less than 540px
+        opts = {
+            region: 'IN',
+            domain: 'IN',
+            displayMode: 'regions',
+            resolution: 'provinces',
+            backgroundColor: '#81d4fa',
+            defaultColor: '#f9f9f9',
+            colorAxis: {minValue: 0,values: [0,20000,50000,100000],colors: ['#cce5ff','#66b0ff','#3395ff','#007bff']},
+            tooltip: {textStyle: { color: '#262626',
+                                fontName: 'Montserrat',
+                                fontSize: 12,
+                                }, showColorCode: true},
+            legend: 'none',
+            forceIFrame: true,
+            magnifyingGlass:{enable: true, zoomFactor: 7.5}
+        };
+    }
 
     var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
     google.visualization.events.addListener(geochart, 'ready',
@@ -397,6 +430,12 @@ var footerMarkUp2 = `
     </div>
     </div>
 `
+var clickMarkUp = `
+<div class="tested__misc">[Click on a state to view it's numbers]</div>
+`
+var hoverMarkUp = `
+<div class="tested__misc">[Hover on a state to view it's numbers]</div>
+`
 
 //media queries
 var bpLargest = window.matchMedia( "(max-width: 1124px)" );
@@ -405,11 +444,10 @@ var bpSmall = window.matchMedia( "(max-width: 676px)" );//540
 
 if (bpMedium.matches) {
     // window width is at less than 686px
-    $(".cases__active").addClass("animate__slideInRight");
-    $(".cases__total").removeClass("animate__slow");
-    $(".cases__death").removeClass("animate__slow");
-    $(".cases__recovered").removeClass("animate__slideInRight");
-    $(".cases__recovered").addClass("animate__slideInLeft");
+    document.querySelector('.tested').insertAdjacentHTML('beforeend',clickMarkUp);
+}
+else{
+    document.querySelector('.tested').insertAdjacentHTML('beforeend',hoverMarkUp);
 }
 
 if (bpSmall.matches) {

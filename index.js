@@ -345,7 +345,7 @@ function drawVisualization() {
             colorAxis: {minValue: 0,values: [0,20000,50000,100000],colors: ['#cce5ff','#66b0ff','#3395ff','#007bff']},
             tooltip: {textStyle: { color: '#262626',
                                 fontName: 'Montserrat',
-                                fontSize: 12,
+                                fontSize: 11,
                                 }, showColorCode: true},
             legend: 'none',
             forceIFrame: true,

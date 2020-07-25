@@ -91,8 +91,10 @@
     };
     @media only screen and (max-width: $bp-xmini) {
         top: 122rem;//to be changed
+        padding-right: 3rem;
     };
     @media only screen and (max-width: $bp-xxmini) {
         top: 113rem;//to be changed
+        padding-right: 2rem;
     };
 }

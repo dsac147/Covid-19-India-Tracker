@@ -462,10 +462,12 @@ tfoot tr {
       top: 125rem; } }
   @media only screen and (max-width: 33.17em) {
     .footer__box {
-      top: 122rem; } }
+      top: 122rem;
+      padding-right: 3rem; } }
   @media only screen and (max-width: 29.27em) {
     .footer__box {
-      top: 113rem; } }
+      top: 113rem;
+      padding-right: 2rem; } }
 
 .header {
   display: flex;

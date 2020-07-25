@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 70.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 42.15em) {
+    html {
+      font-size: 43.75%; } }
+  @media only screen and (max-width: 39em) {
+    html {
+      font-size: 37.5%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 5rem 10vw 3rem 10vw;
+  background-color: #f3f2f9;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 87.73em) {
+    body {
+      padding: 5rem 0 3rem 0;
+      background-color: #f9f9f9; } }
+
+::-webkit-scrollbar {
+  width: 1rem; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f3f2f9;
+  width: 1rem; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #007bff;
+  width: 1rem; }
+
+::selection {
+  background-color: #007bff;
+  color: #fff; }
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2f9; }
+  @media only screen and (max-width: 87.73em) {
+    .heading {
+      background-color: #f9f9f9; } }
+  .heading__text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2.5px; }
+
+.movedown {
+  padding: 0 0 2rem 0;
+  margin-bottom: -4rem;
+  z-index: 1; }
+
+.cases {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 0 4rem 0; }
+  @media only screen and (max-width: 53.55em) {
+    .cases {
+      flex-wrap: wrap; } }
+  .cases__total, .cases__active, .cases__recovered, .cases__death {
+    flex: 0 0 25%;
+    text-align: left;
+    padding: 2rem 5rem;
+    background-color: #f9f9f9;
+    border-radius: 6px; }
+    @media only screen and (max-width: 87.73em) {
+      .cases__total, .cases__active, .cases__recovered, .cases__death {
+        padding: 0 5rem 0 5rem; } }
+    @media only screen and (max-width: 53.55em) {
+      .cases__total, .cases__active, .cases__recovered, .cases__death {
+        flex: 0 0 50%;
+        padding: 0 5rem 0 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
+    .cases__total-no, .cases__active-no, .cases__recovered-no, .cases__death-no {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 4rem; }
+    .cases__total-description, .cases__active-description, .cases__recovered-description, .cases__death-description {
+      display: flex;
+      align-items: center;
+      justify-content: start; }
+      .cases__total-description-text, .cases__active-description-text, .cases__recovered-description-text, .cases__death-description-text {
+        font-size: 2.5rem; }
+      .cases__total-description-icon, .cases__active-description-icon, .cases__recovered-description-icon, .cases__death-description-icon {
+        padding-left: 2rem; }
+    .cases__total-delta, .cases__active-delta, .cases__recovered-delta, .cases__death-delta {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-align: center;
+      padding-top: 2rem; }
+  @media only screen and (max-width: 70.25em) {
+    .cases__total, .cases__active, .cases__recovered {
+      padding: 0;
+      padding-left: 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .cases__total, .cases__active, .cases__recovered {
+      flex: 0 0 50%;
+      padding: 2rem 5rem 0 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .cases__recovered, .cases__death {
+      padding-top: 3rem; } }
+  .cases__active-no {
+    color: #007bff; }
+  .cases__recovered-no, .cases__recovered-delta {
+    color: #04ad19; }
+  .cases__death-no, .cases__death-delta {
+    color: #f20505; }
+
+.arrow-up {
+  height: 2.5rem;
+  width: 2.5rem; }
+
+.arrow-down {
+  height: 2.5rem;
+  width: 2.5rem; }
+
+.chart {
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+  position: relative; }
+  .chart__div-1 {
+    flex: 0 0 100%;
+    height: 40rem;
+    width: 80vw; }
+    @media only screen and (max-width: 87.73em) {
+      .chart__div-1 {
+        width: 100vw;
+        padding: 0 5rem; } }
+    @media only screen and (max-width: 53.55em) {
+      .chart__div-1 {
+        padding: 0; } }
+    @media only screen and (max-width: 42.15em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 90rem; } }
+    @media only screen and (max-width: 39em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 88rem; } }
+    @media only screen and (max-width: 33.17em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 85rem; } }
+    @media only screen and (max-width: 29.27em) {
+      .chart__div-1 {
+        position: absolute;
+        top: 75rem; } }
+
+@media only screen and (max-width: 42.15em) {
+  #chart {
+    position: relative; } }
+
+@media only screen and (max-width: 42.15em) {
+  #chart-heading {
+    position: absolute;
+    top: 85rem; } }
+
+@media only screen and (max-width: 39em) {
+  #chart-heading {
+    position: absolute;
+    top: 83rem; } }
+
+@media only screen and (max-width: 33.17em) {
+  #chart-heading {
+    position: absolute;
+    top: 80rem; } }
+
+@media only screen and (max-width: 29.27em) {
+  #chart-heading {
+    position: absolute;
+    top: 70rem; } }
+
+@media only screen and (max-width: 42.15em) {
+  .map {
+    position: relative;
+    z-index: 0; } }
+
+#visualization {
+  padding: 2rem 0rem 4rem 0;
+  overflow: hidden;
+  width: 78.8vw; }
+  @media only screen and (max-width: 87.73em) {
+    #visualization {
+      width: 100vw;
+      padding: 2rem 5rem 4rem 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    #visualization {
+      padding: 2rem 0rem 4rem 0rem; } }
+  @media only screen and (max-width: 42.15em) {
+    #visualization {
+      position: absolute;
+      width: 130vw;
+      top: 0;
+      left: -15rem;
+      z-index: 10;
+      clip-path: polygon(20% 5%, 80% 5%, 80% 95%, 20% 95%); } }
+  @media only screen and (max-width: 39em) {
+    #visualization {
+      width: 125vw;
+      left: -11rem; } }
+  @media only screen and (max-width: 33.17em) {
+    #visualization {
+      width: 127vw;
+      left: -11rem; } }
+  @media only screen and (max-width: 29.27em) {
+    #visualization {
+      width: 127vw;
+      left: -11rem; } }
+
+.state {
+  display: flex;
+  padding: 2rem 0 4rem 0; }
+  @media only screen and (max-width: 87.73em) {
+    .state {
+      padding: 2rem 5rem 4rem 5rem; } }
+  @media only screen and (max-width: 53.55em) {
+    .state {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0 4rem 0; } }
+
+.dataTable {
+  flex: 0 0 70%;
+  height: 80vh; }
+  @media only screen and (max-width: 53.55em) {
+    .dataTable {
+      flex: 0 0 100%; } }
+  .dataTable__table {
+    width: 100%;
+    border-collapse: collapse; }
+    @media only screen and (max-width: 53.55em) {
+      .dataTable__table {
+        width: 100%;
+        height: 80vh; } }
+    .dataTable__table-caption {
+      display: none; }
+
+.column-heading {
+  font-size: 2.5rem; }
+  @media only screen and (max-width: 53.55em) {
+    .column-heading {
+      justify-content: space-evenly; } }
+  .column-heading__state-ut {
+    text-align: left; }
+  .column-heading__total {
+    text-align: right; }
+  .column-heading__active {
+    color: #007bff;
+    text-align: right; }
+  .column-heading__recovered {
+    color: #04ad19;
+    text-align: right; }
+  .column-heading__deceased {
+    color: #f20505;
+    text-align: right; }
+
+tr {
+  font-size: 2rem; }
+
+td {
+  padding: 1rem 1.5rem; }
+  @media only screen and (max-width: 29.27em) {
+    td {
+      padding: 1rem 1rem; } }
+
+thead {
+  background-color: #f9f9f9; }
+
+th {
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 0;
+  /* Don't forget this, required for the stickiness */
+  padding: 1rem 1.5rem; }
+
+tbody tr:nth-child(even) {
+  background-color: #f3f2f9; }
+
+tbody tr:nth-child(odd) {
+  background-color: #cdeefd; }
+
+tfoot tr {
+  background-color: #f9f9f9;
+  font-size: 2.5rem;
+  font-weight: 700; }
+
+.total {
+  background-color: #f9f9f9;
+  position: sticky;
+  bottom: 0;
+  /* Don't forget this, required for the stickiness */
+  font-family: 'Montserrat';
+  font-weight: 700; }
+  .total-name {
+    text-align: left; }
+  .total-total {
+    text-align: right; }
+  .total-active {
+    color: #007bff;
+    text-align: right; }
+  .total-recovered {
+    color: #04ad19;
+    text-align: right; }
+  .total-deceased {
+    color: #f20505;
+    text-align: right; }
+
+.state-name {
+  text-align: left; }
+
+.state-cases {
+  text-align: right;
+  font-family: 'Montserrat';
+  font-weight: 400; }
+  .state-cases__unavailable {
+    text-align: center; }
+
+.scroll {
+  overflow: auto; }
+
+.scroll2::-webkit-scrollbar-track {
+  background: #f9f9f9; }
+
+.scroll2::-webkit-scrollbar {
+  width: 0.5rem; }
+
+.scroll2::-webkit-scrollbar-thumb {
+  background: #007bff; }
+
+.tested {
+  flex: 0 0 30%;
+  background-color: #f9f9f9;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 0 2rem 0 5rem; }
+  @media only screen and (max-width: 53.55em) {
+    .tested {
+      text-align: center;
+      padding: 5rem 0 2rem 0; } }
+  .tested__location {
+    color: #007bff;
+    font-size: 4rem;
+    font-family: 'Montserrat';
+    font-weight: 700; }
+  .tested__heading {
+    font-size: 2rem; }
+  .tested__number {
+    font-size: 4rem;
+    color: #f20505;
+    font-family: 'Montserrat';
+    font-weight: 700; }
+  .tested__info {
+    font-size: 2rem; }
+    .tested__info-source:link {
+      text-decoration: none;
+      color: #262626;
+      background-color: #cdeefd; }
+  .tested__misc {
+    font-size: 2rem; }
+
+.footer {
+  background-color: #f3f2f9;
+  font-size: 1.6rem;
+  font-family: 'Noto Sans'; }
+  @media only screen and (max-width: 87.73em) {
+    .footer {
+      background-color: #f9f9f9; } }
+  @media only screen and (max-width: 42.15em) {
+    .footer {
+      position: relative; } }
+  .footer__left {
+    flex: 0 0 42.5%;
+    text-align: right; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__left {
+        flex: 0 0 40%; } }
+    .footer__left-text-link {
+      text-decoration: none;
+      color: #262626;
+      background-color: #cdeefd;
+      font-family: 'Montserrat'; }
+  .footer__right {
+    flex: 0 0 42.5%;
+    text-align: left; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__right {
+        flex: 0 0 40%; } }
+    .footer__right-text-github {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: -2rem; }
+      @media only screen and (max-width: 42.15em) {
+        .footer__right-text-github {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0rem;
+          padding-top: .5rem; } }
+      .footer__right-text-github-icon {
+        width: 2.5rem;
+        height: 2.5rem; }
+        @media only screen and (max-width: 53.55em) {
+          .footer__right-text-github-icon {
+            width: 2rem;
+            height: 2rem; } }
+      .footer__right-text-github-text {
+        padding-left: 1rem; }
+    .footer__right-text-link {
+      font-family: 'Montserrat'; }
+  .footer__center {
+    flex: 0 0 15%;
+    text-align: center; }
+    @media only screen and (max-width: 53.55em) {
+      .footer__center {
+        flex: 0 0 20%; } }
+  .footer-image {
+    width: 15rem;
+    height: auto; }
+    @media only screen and (max-width: 53.55em) {
+      .footer-image {
+        width: 12.5rem;
+        height: auto; } }
+
+.footer__box {
+  display: flex;
+  padding-top: 2rem;
+  align-items: center; }
+  @media only screen and (max-width: 42.15em) {
+    .footer__box {
+      position: absolute;
+      top: 130rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 39em) {
+    .footer__box {
+      padding-right: 5rem;
+      top: 125rem; } }
+  @media only screen and (max-width: 33.17em) {
+    .footer__box {
+      top: 122rem;
+      padding-right: 3rem; } }
+  @media only screen and (max-width: 29.27em) {
+    .footer__box {
+      top: 113rem;
+      padding-right: 2rem; } }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .header__icon {
+    padding-right: 2rem; }
+  .header__text {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2.5px; }
+
+#virus {
+  height: 5rem;
+  width: 5rem; }
+
+.container {
+  display: flex;
+  flex-direction: column; }

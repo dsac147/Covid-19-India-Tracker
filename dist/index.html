@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content="./img/preview.png"/>
+    <meta property="og:title" content="Covid-19 India Tracker"/>
+    <meta property="og:url" content="https://covid19-india-dashboard.netlify.app/"/>
+    <meta property="og:description" content="Modern Dashboard for analysis of Covid-19 cases in India"/>
+    <title>Covid-19 India Tracker</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header animate__animated animate__fadeIn">
+            <div class="header__icon">
+                <img src="./img/virus.svg" id="virus" alt="COVID-19">
+            </div>
+            <div class="header__text">COVID-19 INDIA TRACKER</div>
+        </div>
+        <div class="cases">
+            <div class="cases__total animate__animated">
+                <div class="cases__total-no"></div>
+                <div class="cases__total-description ">
+                    <div class="cases__total-description-text">Total Cases</div>
+                    <div class="cases__total-description-icon">
+                        <svg class="arrow-up">
+                            <use xlink:href="img/sprite.svg#icon-arrow-up2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__total-delta animate__animated animate__flash animate__delay-2s">
+                </div>
+            </div>
+            <div class="cases__active animate__animated ">
+                <div class="cases__active-no"></div>
+                <div class="cases__active-description">
+                    <div class="cases__active-description-text">Active</div>
+                    <div class="cases__active-description-icon">
+                        <svg class="arrow-down">
+                            <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__active-delta ">
+                </div>
+            </div>
+            <div class="cases__recovered animate__animated ">
+                <div class="cases__recovered-no"></div>
+                <div class="cases__recovered-description">
+                    <div class="cases__recovered-description-text">Recovered</div>
+                    <div class="cases__recovered-description-icon">
+                        <svg class="arrow-up">
+                            <use xlink:href="img/sprite.svg#icon-arrow-up2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__recovered-delta">
+                </div>
+            </div>
+            <div class="cases__death animate__animated">
+                <div class="cases__death-no"></div>
+                <div class="cases__death-description">
+                    <div class="cases__death-description-text">Deceased</div>
+                    <div class="cases__death-description-icon">
+                        <svg class="arrow-down">
+                            <use xlink:href="img/sprite.svg#icon-arrow-down2"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cases__death-delta">
+                </div>
+            </div>
+        </div>
+        <div class="heading animate__animated animate__fadeIn">
+            <div class="heading__text">STATEWISE DISTRIBUTION OF CASES</div>
+        </div>
+        <div class="state">
+            <div class="dataTable animate__animated animate__fadeIn animate__slow">
+                <table class="dataTable__table">
+                    <caption class="dataTable__table-caption">STATEWISE DISTRIBUTION OF CASES</caption>
+                    <thead class="table-heading">
+                        <tr class="column-heading" id="TT">
+                            <th class="column-heading__state-ut" scope="State/UT">State/UT</th>
+                            <th class="column-heading__total" scope="Total">Total</th>
+                            <th class="column-heading__active" scope="Active">Active</th>
+                            <th class="column-heading__recovered" scope="Recovered">Recovered</th>
+                            <th class="column-heading__deceased" scope="Deceased">Deceased</th>
+                       </tr>
+                    </thead>
+                    <tbody class="table-body"></tbody">
+                    <tfoot class="table-footer"></tfoot>
+                </table>
+            </div>
+            <div class="tested animate__animated animate__fadeIn animate__slow">
+                <div class="tested__location"></div>
+                <div class="tested__heading">Tested</div>
+                <div class="tested__number"></div>
+                <div class="tested__info">As of <span class="tested__info-date"></span><br>as per <a href="http://" class="tested__info-source" target="_blank">sources.</a></div>
+            </div>
+        </div>
+        <div class="movedown heading animate__animated animate__fadeIn">
+            <div class="heading__text">ACTIVE CASES</div>
+        </div>
+        <div class="map animate__animated animate__fadeIn animate__slow">
+            <div id="visualization" class="map__visualization"> </div>
+        </div>
+        <div class="heading animate__animated animate__fadeIn" id="chart">
+            <div class="heading__text" id="chart-heading">DAILY CASES TREND ANALYSIS</div>
+        </div>
+        <div class="chart animate__animated animate__fadeIn animate__slow">
+            <div id="chart__div-1" class="chart__div-1"></div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>>
+</html>

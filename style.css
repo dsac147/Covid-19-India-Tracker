@@ -169,7 +169,7 @@ body {
     @media only screen and (max-width: 29.27em) {
       .chart__div-1 {
         position: absolute;
-        top: 70rem; } }
+        top: 65rem; } }
 
 @media only screen and (max-width: 42.15em) {
   #chart {
@@ -193,7 +193,7 @@ body {
 @media only screen and (max-width: 29.27em) {
   #chart-heading {
     position: absolute;
-    top: 65rem; } }
+    top: 60rem; } }
 
 @media only screen and (max-width: 42.15em) {
   .map {
@@ -221,12 +221,16 @@ body {
       clip-path: polygon(20% 5%, 80% 5%, 80% 95%, 20% 95%); } }
   @media only screen and (max-width: 39em) {
     #visualization {
-      position: absolute;
-      width: 120vw;
-      top: 0;
-      left: -11rem;
-      z-index: 10;
-      clip-path: polygon(20% 5%, 80% 5%, 80% 95%, 20% 95%); } }
+      width: 125vw;
+      left: -11rem; } }
+  @media only screen and (max-width: 33.17em) {
+    #visualization {
+      width: 130vw;
+      left: -11rem; } }
+  @media only screen and (max-width: 29.27em) {
+    #visualization {
+      width: 135vw;
+      left: -11rem; } }
 
 .state {
   display: flex;
@@ -252,6 +256,11 @@ body {
     @media only screen and (max-width: 53.55em) {
       .dataTable__table {
         width: 100%;
+        height: 80vh;
+        overflow: auto; } }
+    @media only screen and (max-width: 33.17em) {
+      .dataTable__table {
+        width: 95%;
         height: 80vh;
         overflow: auto; } }
     .dataTable__table-caption {
@@ -281,6 +290,9 @@ tr {
 
 td {
   padding: 1rem 1.5rem; }
+  @media only screen and (max-width: 29.27em) {
+    td {
+      padding: 1rem 1rem; } }
 
 thead {
   background-color: #f9f9f9; }
@@ -457,19 +469,15 @@ tfoot tr {
       margin-bottom: 5rem; } }
   @media only screen and (max-width: 39em) {
     .footer__box {
-      position: absolute;
-      top: 125rem;
-      margin-bottom: 5rem; } }
+      padding-right: 5rem;
+      top: 125rem; } }
   @media only screen and (max-width: 33.17em) {
     .footer__box {
-      position: absolute;
       top: 119rem;
-      margin-bottom: 5rem; } }
+      padding-bottom: 7rem; } }
   @media only screen and (max-width: 29.27em) {
     .footer__box {
-      position: absolute;
-      top: 110rem;
-      margin-bottom: 5rem; } }
+      top: 105rem; } }
 
 .header {
   display: flex;

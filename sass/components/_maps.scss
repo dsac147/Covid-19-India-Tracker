@@ -28,12 +28,16 @@
         clip-path: polygon(20% 5%,80% 5%,80% 95%,20% 95%);
     };
     @media only screen and (max-width: $bp-mini) {
-        position: absolute;
-        width: 120vw;
-        top: 0;
+        width: 125vw;
         left: -11rem;
-        z-index: 10;
-        clip-path: polygon(20% 5%,80% 5%,80% 95%,20% 95%);
+    };
+    @media only screen and (max-width: $bp-xmini) {
+        width: 130vw;
+        left: -11rem;
+    };
+    @media only screen and (max-width: $bp-xxmini) {
+        width: 135vw;
+        left: -11rem;
     };
     
 }

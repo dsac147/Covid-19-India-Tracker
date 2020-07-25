@@ -25,6 +25,11 @@
             height: 80vh;
             overflow: auto;
         };
+        @media only screen and (max-width: $bp-xmini) {
+            width: 95%;
+            height: 80vh;
+            overflow: auto;
+        };
         &-caption{
             display: none;
         }
@@ -64,6 +69,9 @@ tr{
 
 td{
     padding: 1rem 1.5rem;
+    @media only screen and (max-width: $bp-xxmini) {
+        padding: 1rem 1rem;
+    };
 }
 
 thead{

@@ -11,8 +11,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-  overflow: auto; }
+  font-size: 62.5%; }
   @media only screen and (max-width: 70.25em) {
     html {
       font-size: 50%; } }
@@ -165,11 +164,11 @@ body {
     @media only screen and (max-width: 33.17em) {
       .chart__div-1 {
         position: absolute;
-        top: 80rem; } }
+        top: 85rem; } }
     @media only screen and (max-width: 29.27em) {
       .chart__div-1 {
         position: absolute;
-        top: 65rem; } }
+        top: 75rem; } }
 
 @media only screen and (max-width: 42.15em) {
   #chart {
@@ -188,12 +187,12 @@ body {
 @media only screen and (max-width: 33.17em) {
   #chart-heading {
     position: absolute;
-    top: 75rem; } }
+    top: 80rem; } }
 
 @media only screen and (max-width: 29.27em) {
   #chart-heading {
     position: absolute;
-    top: 60rem; } }
+    top: 70rem; } }
 
 @media only screen and (max-width: 42.15em) {
   .map {
@@ -225,11 +224,11 @@ body {
       left: -11rem; } }
   @media only screen and (max-width: 33.17em) {
     #visualization {
-      width: 130vw;
+      width: 127vw;
       left: -11rem; } }
   @media only screen and (max-width: 29.27em) {
     #visualization {
-      width: 135vw;
+      width: 127vw;
       left: -11rem; } }
 
 .state {
@@ -256,13 +255,7 @@ body {
     @media only screen and (max-width: 53.55em) {
       .dataTable__table {
         width: 100%;
-        height: 80vh;
-        overflow: auto; } }
-    @media only screen and (max-width: 33.17em) {
-      .dataTable__table {
-        width: 95%;
-        height: 80vh;
-        overflow: auto; } }
+        height: 80vh; } }
     .dataTable__table-caption {
       display: none; }
 
@@ -348,9 +341,6 @@ tfoot tr {
 
 .scroll {
   overflow: auto; }
-  @media only screen and (max-width: 53.55em) {
-    .scroll {
-      overflow: visible; } }
 
 .scroll2::-webkit-scrollbar-track {
   background: #f9f9f9; }
@@ -473,11 +463,10 @@ tfoot tr {
       top: 125rem; } }
   @media only screen and (max-width: 33.17em) {
     .footer__box {
-      top: 119rem;
-      padding-bottom: 7rem; } }
+      top: 119rem; } }
   @media only screen and (max-width: 29.27em) {
     .footer__box {
-      top: 105rem; } }
+      top: 113rem; } }
 
 .header {
   display: flex;

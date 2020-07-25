@@ -23,12 +23,6 @@
         @media only screen and (max-width: $bp-small) {
             width: 100%;
             height: 80vh;
-            overflow: auto;
-        };
-        @media only screen and (max-width: $bp-xmini) {
-            width: 95%;
-            height: 80vh;
-            overflow: auto;
         };
         &-caption{
             display: none;
@@ -138,9 +132,6 @@ tfoot tr{
 //scrollbar
 .scroll {
     overflow: auto;
-    @media only screen and (max-width: $bp-small) {
-        overflow: visible;
-    };
 }
 
 .scroll2::-webkit-scrollbar-track {

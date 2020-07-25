@@ -414,7 +414,9 @@ if (bpMedium.matches) {
 
 if (bpSmall.matches) {
     document.querySelector('.footer').insertAdjacentHTML('beforeend',footerMarkUp2);
+    $(".dataTable").removeClass("scroll scroll2");
 }
 else{
     document.querySelector('.footer').insertAdjacentHTML('beforeend',footerMarkUp1);
+    $(".dataTable").addClass("scroll scroll2");
 }

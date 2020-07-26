@@ -12,10 +12,7 @@ A modern dashboard for analysis of Covid-19 cases in India based on daily data c
 
 ## Built With
 
-- [ESLint](https://eslint.org/)
-- [StyleLint](https://stylelint.io/)
 - [Sass](https://sass-lang.com/)
-- [PostCSS](https://postcss.org/)
 - [Animate.css](https://animate.style/)
 - [Jquery](https://jquery.com/)
 - [Jquery-csv](https://www.npmjs.com/package/jquery-csv)

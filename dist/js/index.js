@@ -203,23 +203,41 @@ function drawChart() {
             // transform the CSV string into a 2-dimensional array
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
         
+        // 0: "Date" string-
+        // 1: "Date_YMD" string
+        // 2: "Daily Confirmed" number-
+        // 3: "Total Confirmed" number
+        // 4: "Daily Recovered" number-
+        // 5: "Total Recovered" number
+        // 6: "Daily Deceased" number
+        // 7: "Total Deceased" number
+
+        arrayData[0] = [{label: 'Date', type: 'string'},
+        {label: 'Date_YMD', type: 'number'},
+        {label: 'Daily Confirmed', type: 'number'},
+        {label: 'Total Confirmed', type: 'number'},
+        {label: 'Daily Recovered', type: 'number'},
+        {label: 'Total Recovered', type: 'number'},
+        {label: 'Daily Deceased', type: 'number'},
+        {label: 'Total Deceased', type: 'number'}];
             // this new DataTable object holds all the data
         var dataTable = new google.visualization.arrayToDataTable(arrayData);
             
             // this view can select a subset of the data at a time
         var dataView = new google.visualization.DataView(dataTable);
         
-        dataView.setColumns([0,5,3,1]);
+        // dataView.setColumns([0,5,3,1]);
+        dataView.setColumns([0,6,4,2]);
 
             //creating a copy of the dataTable to overcome the startup animation bug
         dataView = dataView.toDataTable();
 
         var options = {
         titlePosition:'none',
-        hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: true},showTextEvery: 15,maxAlternation:1,slantedText:true,slantedTextAngle:30,},
+        hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: true},showTextEvery: 30,maxAlternation:1,slantedText:true,slantedTextAngle:30,},
         vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: true},format: 'short'},
         legend:{alignment:'center',textStyle:{ color: '#262626',bold: true}},
-        isStacked: true,
+        isStacked:false,
         forceIFrame: true,
         areaOpacity: 0.5,
         backgroundColor: '#f9f9f9',
@@ -240,10 +258,10 @@ function drawChart() {
             options = {
                 fontSize:'12',
                 titlePosition:'none',
-                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 30,maxAlternation:1,slantedText:true,slantedTextAngle:45,},
+                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 60,maxAlternation:1,slantedText:true,slantedTextAngle:45,},
                 vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: false},format: 'short'},
                 legend:{alignment:'center',textStyle:{ color: '#262626',bold: false}},
-                isStacked: true,
+                isStacked: false,
                 forceIFrame: true,
                 areaOpacity: 0.5,
                 backgroundColor: '#f9f9f9',
@@ -264,10 +282,10 @@ function drawChart() {
             options = {
                 fontSize:'8',
                 titlePosition:'none',
-                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 30,maxAlternation:1,slantedText:true,slantedTextAngle:60,},
+                hAxis: {title: 'Date',  titleTextStyle: {color: '#262626', bold: false},showTextEvery: 60,maxAlternation:1,slantedText:true,slantedTextAngle:60,},
                 vAxis: {title: 'Cases', minValue: 0,titleTextStyle: {color: '#262626', bold: false},format: 'short'},
                 legend:{alignment:'center',textStyle:{ color: '#262626',bold: false}},
-                isStacked: true,
+                isStacked: false,
                 forceIFrame: true,
                 areaOpacity: 0.5,
                 backgroundColor: '#f9f9f9',

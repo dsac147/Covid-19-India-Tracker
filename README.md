@@ -7,9 +7,7 @@
   <h3 align="center">Covid-19-India-Tracker</h3>
 
   <p align="center">
-    <img alt="Issues" src="https://img.shields.io/github/issues/dsac147/Covid-19-India-Tracker" />
     <img alt="Stars" src="https://img.shields.io/github/stars/dsac147/Covid-19-India-Tracker" />
-    <img alt="License" src="https://img.shields.io/github/license/dsac147/Covid-19-India-Tracker" />
   </p>
 
   <p align="center">
